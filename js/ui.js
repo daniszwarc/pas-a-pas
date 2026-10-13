@@ -1,5 +1,6 @@
 // DOM rendering. Every render function returns an element; all state lives in the caller.
 import { PHASES, canContinue, evaluate, parseAnswer } from './steps.js';
+import { createVoice, voiceLang } from './voice.js';
 
 export function h(tag, props = {}, ...kids) {
   const el = document.createElement(tag);
@@ -21,8 +22,13 @@ const btn = (label, onclick, o = {}) =>
   h('button', { type: 'button', class: o.cls, onclick, disabled: o.disabled, 'data-key': o.key,
     'aria-label': o.aria, 'aria-pressed': o.pressed === undefined ? null : String(o.pressed) }, label);
 
+const SPEAKER = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5l4.5 4v-13l-4.5 4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>';
+const LOGO = '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="3" y="31" width="13" height="13" rx="3.5" fill="currentColor" fill-opacity=".4"/><rect x="17.5" y="18" width="13" height="13" rx="3.5" fill="currentColor" fill-opacity=".7"/><rect x="32" y="5" width="13" height="13" rx="3.5" fill="currentColor"/></svg>';
+const svgSpan = (markup, cls) => { const el = h('span', { class: cls, 'aria-hidden': 'true' }); el.innerHTML = markup; return el; };
+const speaker = () => svgSpan(SPEAKER).firstChild;
+
 const audioBtn = (ctx, text, label = 'Écouter') =>
-  ctx.voiceActive ? btn(`🔊 ${label}`, () => ctx.speak(text), { aria: `${label} : ${text}`, key: 'audio' }) : null;
+  ctx.voiceActive ? btn([speaker(), label], () => ctx.speak(text), { aria: `${label} : ${text}`, key: 'audio' }) : null;
 
 const title = (text) => h('h2', { class: 'screen-title', tabindex: '-1' }, text);
 
@@ -68,7 +74,10 @@ export function renderQuestionBox(state, ctx, large = false) {
 // ---------- steps ----------
 function phaseLine(step) {
   const ph = PHASES[step - 1];
-  return h('p', { class: 'phase' }, `Étape ${ph.n} sur 7 · ${ph.label}`);
+  return h('div', { class: 'phase' },
+    h('div', { class: 'progress', 'aria-hidden': 'true' },
+      PHASES.map((p) => h('span', { class: p.n < step ? 'done' : p.n === step ? 'current' : null }))),
+    h('p', { class: 'phase-text' }, `Étape ${ph.n} sur 7 · ${ph.label}`));
 }
 
 const nextBtn = (state, ctx, label = 'Continuer') =>
@@ -104,8 +113,8 @@ const stepData = (state, ctx) => [
 const stepAsked = (state, ctx) => [
   phaseLine(4), title('Qu’est-ce qu’on cherche ?'),
   h('div', { class: 'stack' }, state.problem.asked.options.map((opt, i) =>
-    btn(opt, () => { ctx.dispatch({ type: 'pick-asked', i }); ctx.speak(opt); },
-      { cls: 'big', pressed: state.asked === i, key: `asked-${i}` }))),
+    btn(h('span', { class: 'txt' }, opt), () => { ctx.dispatch({ type: 'pick-asked', i }); ctx.speak(opt); },
+      { cls: 'big choice', pressed: state.asked === i, key: `asked-${i}` }))),
   h('div', { class: 'row' }, nextBtn(state, ctx)),
 ];
 
@@ -116,10 +125,10 @@ function stepPlan(state, ctx) {
     h('p', {}, p.steps === 1 ? 'Choisis l’opération.' : `Touche les ${p.steps} étapes dans l’ordre.`),
     h('div', { class: 'stack' }, p.plan.options.map((opt, i) => {
       const pos = state.plan.indexOf(i);
-      return h('button', { type: 'button', class: 'big tile', 'data-key': `plan-${i}`, 'aria-pressed': String(pos >= 0),
+      return h('button', { type: 'button', class: `big tile${pos >= 0 && p.steps > 1 ? ' has-badge' : ''}`, 'data-key': `plan-${i}`, 'aria-pressed': String(pos >= 0),
         disabled: pos < 0 && p.steps > 1 && state.plan.length >= p.steps,
         onclick: () => ctx.dispatch({ type: 'pick-plan', i }) },
-        p.steps > 1 && pos >= 0 ? h('span', { class: 'badge', 'aria-hidden': 'true' }, String(pos + 1)) : null, opt);
+        p.steps > 1 && pos >= 0 ? h('span', { class: 'badge', 'aria-hidden': 'true' }, String(pos + 1)) : null, h('span', { class: 'txt' }, opt));
     })),
     h('div', { class: 'row' }, nextBtn(state, ctx)),
   ];
@@ -211,7 +220,7 @@ function stepReveal(state, ctx, { onNext, onHome, saveFailed }) {
   const { correct, value } = evaluate(state);
   return [
     title('La réponse'),
-    h('p', { class: 'big' }, `La réponse est : ${withUnit(p.answer, p.unit)}`),
+    h('p', { class: 'answer-line' }, `La réponse est : ${withUnit(p.answer, p.unit)}`),
     h('p', {}, correct ? 'Ta réponse est la même.' : `Ta réponse était : ${withUnit(value, p.unit)}`),
     h('p', {}, p.explanation),
     saveFailed ? h('p', { class: 'hint' }, 'Cet essai n’a pas pu être enregistré sur cet appareil.') : null,
@@ -231,27 +240,27 @@ export function renderProblem(state, ctx, extra) {
   const qbox = state.step === 1 ? null : renderQuestionBox(state, ctx, state.step === 2);
   return h('section', { class: 'screen' },
     h('div', { class: 'topbar' }, btn('‹ Accueil', extra.onHome, { cls: 'link', key: 'home-top' })),
-    qbox, body);
+    qbox, h('div', { class: 'card' }, body));
 }
 
 // ---------- other screens ----------
 export function renderHome({ onStart, onSettings, onParents }) {
-  return h('section', { class: 'screen' },
-    h('h1', { class: 'screen-title', tabindex: '-1' }, 'Pas à pas'),
-    h('p', {}, 'On résout un problème, une étape à la fois.'),
-    h('div', { class: 'row' }, btn('Commencer', onStart, { cls: 'primary big', key: 'start' })),
-    h('div', { class: 'row' },
-      btn('Réglages', onSettings, { key: 'settings' }),
+  return h('section', { class: 'screen home' },
+    h('div', { class: 'brand' }, svgSpan(LOGO, 'logo'), h('h1', { class: 'screen-title', tabindex: '-1' }, 'Pas à pas')),
+    h('p', { class: 'lead' }, 'On résout un problème, une étape à la fois.'),
+    h('div', { class: 'row cta' }, btn('Commencer', onStart, { cls: 'primary big', key: 'start' })),
+    h('div', { class: 'row secondary' },
+      btn('Réglages', onSettings, { cls: 'ghost', key: 'settings' }),
       btn('Parents', onParents, { cls: 'link', key: 'parents' })));
 }
 
 export function renderPause({ onContinue, onStop }) {
-  return h('section', { class: 'screen' },
+  return h('section', { class: 'screen pause' }, h('div', { class: 'card' },
     title('On fait une pause ?'),
     h('p', {}, 'Tu peux continuer ou t’arrêter ici. C’est toi qui choisis.'),
     h('div', { class: 'row' },
       btn('Continuer', onContinue, { cls: 'primary big', key: 'continue' }),
-      btn('Terminer', onStop, { cls: 'big', key: 'stop' })));
+      btn('Terminer', onStop, { cls: 'big', key: 'stop' }))));
 }
 
 const BG_LABELS = { blanc: 'Blanc cassé', creme: 'Crème', gris: 'Gris pâle', bleu: 'Bleu pâle' };
@@ -262,18 +271,51 @@ function choices(legend, options, current, onPick) {
       btn(label, () => onPick(value), { pressed: current === value, key: `${legend}-${value}` }))));
 }
 
-export function renderSettings(settings, { onChange, onHome, onTestVoice }) {
+const SAMPLE = 'Marie a douze billes. Elle en perd cinq. Combien lui en reste-t-il ?';
+
+function voicePicker(settings) {
+  const voice = createVoice();
+  const select = h('select', { id: 'voice-select', class: 'select' });
+  const sample = btn([speaker(), 'Écouter un exemple'], () => voice.speak(SAMPLE, settings.rate), { key: 'sample' });
+  const online = h('p', { class: 'hint' }, 'Les voix en ligne envoient le texte à un serveur externe.');
+  const none = h('p', { class: 'hint' }, 'Aucune voix française n\u2019est disponible sur cet appareil.');
+
+  function fill() {
+    const voices = voice.list();
+    const current = voice.selectedURI();
+    select.replaceChildren(...[
+      current || !voices.length ? null : h('option', { value: '' }, 'Choisir une voix…'),
+      voices.length ? null : h('option', { value: '' }, 'Aucune voix'),
+      voices.map((v) => h('option', { value: v.voiceURI },
+        `${v.name} (${voiceLang(v)})${v.localService ? '' : ' (en ligne)'}`)),
+    ].flat().filter(Boolean));
+    select.value = current || '';
+    select.disabled = !voices.length;
+    sample.disabled = !current;
+    none.hidden = voices.length > 0;
+    online.hidden = !voices.some((v) => v.voiceURI === current && !v.localService);
+  }
+  fill();
+  select.addEventListener('change', () => { if (select.value) voice.select(select.value); });
+  const onVoices = () => (select.isConnected ? fill() : voice.offVoices(onVoices));
+  voice.onVoices(onVoices);
+
+  return h('div', { class: 'setting' }, h('label', { for: 'voice-select' }, 'Voix'),
+    h('div', { class: 'row' }, select, sample), online, none);
+}
+
+export function renderSettings(settings, { onChange, onHome }) {
   const rate = Math.round(settings.rate * 10) / 10;
   const step = (d) => onChange({ rate: Math.min(1.2, Math.max(0.7, Math.round((rate + d) * 10) / 10)) });
   return h('section', { class: 'screen' },
     h('div', { class: 'topbar' }, btn('‹ Accueil', onHome, { cls: 'link', key: 'home-top' })),
     title('Réglages'),
-    choices('Voix', [[true, 'Activée'], [false, 'Désactivée']], settings.voiceOn, (v) => onChange({ voiceOn: v })),
+    choices('Lecture à voix haute', [[true, 'Activée'], [false, 'Désactivée']], settings.voiceOn, (v) => onChange({ voiceOn: v })),
+    voicePicker(settings),
     h('fieldset', {}, h('legend', {}, `Vitesse de la voix : ${fmt(rate)}`),
       h('div', { class: 'row' },
         btn('Plus lent', () => step(-0.1), { disabled: rate <= 0.7, key: 'slower' }),
-        btn('Plus vite', () => step(0.1), { disabled: rate >= 1.2, key: 'faster' }),
-        btn('🔊 Essayer', onTestVoice, { key: 'try' }))),
+        btn('Plus vite', () => step(0.1), { disabled: rate >= 1.2, key: 'faster' }))),
     choices('Taille du texte', [[18, 'Petit'], [20, 'Normal'], [24, 'Grand'], [28, 'Très grand']], settings.fontSize, (v) => onChange({ fontSize: v })),
     choices('Espace entre les lettres', [[0, 'Normal'], [0.05, 'Large'], [0.1, 'Plus large'], [0.15, 'Très large']], settings.letterSpacing, (v) => onChange({ letterSpacing: v })),
     choices('Espace entre les lignes', [[1.5, 'Serré'], [1.7, 'Normal'], [2, 'Large'], [2.3, 'Très large']], settings.lineHeight, (v) => onChange({ lineHeight: v })),
@@ -294,7 +336,7 @@ export function renderParents(stats, { onExport, onHome }) {
   return h('section', { class: 'screen' },
     h('div', { class: 'topbar' }, btn('‹ Accueil', onHome, { cls: 'link', key: 'home-top' })),
     title('Espace parents'),
-    h('p', {}, `Nombre d’essais : ${stats.count}`),
+    h('p', { class: 'stat' }, `Nombre d’essais : ${stats.count}`),
     h('div', { class: 'table-wrap' }, h('table', {},
       h('caption', {}, 'Essais selon le résultat'),
       h('tbody', {}, row('Réponses correctes', stats.correct),

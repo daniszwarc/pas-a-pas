@@ -130,7 +130,7 @@ function dispatch(action) {
 function finishAttempt() {
   const now = Date.now();
   const attempt = toAttempt(state, {
-    now, settings,
+    now, settings: { ...settings, voiceName: voice.activeName() },
     sessionElapsedMs: now - session.start,
     pauseShown: session.pauseShown,
   });

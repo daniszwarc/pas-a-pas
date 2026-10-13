@@ -1,5 +1,5 @@
 // Bump CACHE when any cached file changes, otherwise clients keep the old copy.
-const CACHE = 'pas-a-pas-v1';
+const CACHE = 'pas-a-pas-v5';
 const SHELL = [
   './',
   'index.html',
