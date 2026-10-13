@@ -1,0 +1,134 @@
+[
+  {
+    "id": "p01", "schema": "combine", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "end",
+    "chunks": ["Léa a 12 billes rouges.", "Elle a aussi 15 billes bleues.", "Combien de billes a-t-elle en tout ?"],
+    "question": "Combien de billes a-t-elle en tout ?",
+    "numbers": [{"value": 12, "relevant": true}, {"value": 15, "relevant": true}],
+    "asked": {"options": ["Le total des billes", "Ce qui reste", "La différence entre les deux couleurs", "Le nombre de billes rouges"], "correct": 0},
+    "plan": {"options": ["+ Additionner", "− Soustraire", "× Multiplier", "÷ Diviser"], "correctSequence": [0]},
+    "answer": 27, "unit": "billes", "intermediate": [],
+    "wrongAnswerTypes": {"3": "wrong_operation", "180": "wrong_operation"},
+    "explanation": "On cherche le total : on additionne 12 et 15, ce qui donne 27 billes."
+  },
+  {
+    "id": "p02", "schema": "change", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "end",
+    "chunks": ["Samuel a 45 $.", "Il achète un livre à 18 $.", "Combien d'argent lui reste-t-il ?"],
+    "question": "Combien d'argent lui reste-t-il ?",
+    "numbers": [{"value": 45, "relevant": true}, {"value": 18, "relevant": true}],
+    "asked": {"options": ["Le prix du livre", "Ce qui reste à Samuel", "Le total de l'argent et du livre"], "correct": 1},
+    "plan": {"options": ["+ Additionner", "− Soustraire", "× Multiplier", "÷ Diviser"], "correctSequence": [1]},
+    "answer": 27, "unit": "$", "intermediate": [],
+    "wrongAnswerTypes": {"63": "wrong_operation", "810": "wrong_operation"},
+    "explanation": "On cherche ce qui reste : on soustrait 18 de 45, ce qui donne 27 $."
+  },
+  {
+    "id": "p03", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 1, "questionPosition": "end",
+    "chunks": ["Zoé a 35 autocollants.", "Elle en a 9 de plus que Nao.", "Combien d'autocollants Nao a-t-il ?"],
+    "question": "Combien d'autocollants Nao a-t-il ?",
+    "numbers": [{"value": 35, "relevant": true}, {"value": 9, "relevant": true}],
+    "asked": {"options": ["Le total des autocollants", "Le nombre d'autocollants de Zoé", "Le nombre d'autocollants de Nao", "L'écart entre Zoé et Nao"], "correct": 2},
+    "plan": {"options": ["+ Additionner", "− Soustraire", "× Multiplier", "÷ Diviser"], "correctSequence": [1]},
+    "answer": 26, "unit": "autocollants", "intermediate": [],
+    "wrongAnswerTypes": {"44": "wrong_operation", "315": "wrong_operation"},
+    "explanation": "Zoé en a 9 de plus, donc Nao en a 9 de moins : 35 − 9 = 26 autocollants."
+  },
+  {
+    "id": "p04", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 1, "questionPosition": "start",
+    "chunks": ["Combien de buts Émile a-t-il marqués ?", "Alex a marqué 17 buts.", "Il en a marqué 6 de moins qu'Émile."],
+    "question": "Combien de buts Émile a-t-il marqués ?",
+    "numbers": [{"value": 17, "relevant": true}, {"value": 6, "relevant": true}],
+    "asked": {"options": ["Le nombre de buts d'Émile", "Le nombre de buts d'Alex", "Le total de buts des deux", "La différence entre les deux"], "correct": 0},
+    "plan": {"options": ["+ Additionner", "− Soustraire", "× Multiplier", "÷ Diviser"], "correctSequence": [0]},
+    "answer": 23, "unit": "buts", "intermediate": [],
+    "wrongAnswerTypes": {"11": "wrong_operation", "102": "wrong_operation"},
+    "explanation": "Alex en a 6 de moins qu'Émile, donc Émile en a 6 de plus : 17 + 6 = 23 buts."
+  },
+  {
+    "id": "p05", "schema": "combine", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "start",
+    "chunks": ["Combien de personnes y a-t-il dans l'autobus ?", "Il y a 23 filles.", "Il y a 19 garçons.", "L'autobus part à 8 heures."],
+    "question": "Combien de personnes y a-t-il dans l'autobus ?",
+    "numbers": [{"value": 23, "relevant": true}, {"value": 19, "relevant": true}, {"value": 8, "relevant": false}],
+    "asked": {"options": ["Le nombre de garçons", "Le nombre de personnes dans l'autobus", "L'heure du départ", "Le nombre de filles"], "correct": 1},
+    "plan": {"options": ["+ Additionner", "− Soustraire", "× Multiplier", "÷ Diviser"], "correctSequence": [0]},
+    "answer": 42, "unit": "personnes", "intermediate": [],
+    "wrongAnswerTypes": {"50": "wrong_numbers", "31": "wrong_numbers", "27": "wrong_numbers", "4": "wrong_operation"},
+    "explanation": "On cherche le total des personnes : 23 + 19 = 42. L'heure du départ ne sert pas."
+  },
+  {
+    "id": "p06", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Nina a 50 $.", "Elle achète 3 cahiers.", "Chaque cahier coûte 8 $.", "Combien d'argent lui reste-t-il ?"],
+    "question": "Combien d'argent lui reste-t-il ?",
+    "numbers": [{"value": 50, "relevant": true}, {"value": 3, "relevant": true}, {"value": 8, "relevant": true}],
+    "asked": {"options": ["Le prix des 3 cahiers", "L'argent qui reste à Nina", "Le prix d'un seul cahier", "L'argent de Nina au départ"], "correct": 1},
+    "plan": {"options": ["× Multiplier le prix d'un cahier par 3", "− Soustraire ce total de l'argent de Nina", "+ Additionner le prix des cahiers", "÷ Diviser l'argent de Nina par 3"], "correctSequence": [0, 1]},
+    "answer": 26, "unit": "$", "intermediate": [{"value": 24, "label": "Le prix des 3 cahiers"}],
+    "wrongAnswerTypes": {"24": "intermediate_as_answer", "42": "wrong_numbers", "47": "wrong_numbers", "74": "wrong_operation", "58": "wrong_operation"},
+    "explanation": "On trouve d'abord le prix des 3 cahiers (3 × 8 = 24 $), puis on le soustrait de 50 $ : il reste 26 $."
+  },
+  {
+    "id": "p07", "schema": "combine", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Une classe a 4 rangées de 6 pupitres.", "Il y a aussi 5 pupitres au fond.", "Combien y a-t-il de pupitres en tout ?"],
+    "question": "Combien y a-t-il de pupitres en tout ?",
+    "numbers": [{"value": 4, "relevant": true}, {"value": 6, "relevant": true}, {"value": 5, "relevant": true}],
+    "asked": {"options": ["Le nombre de rangées", "Le nombre de pupitres dans les rangées", "Le nombre de pupitres au fond", "Le nombre de pupitres en tout"], "correct": 3},
+    "plan": {"options": ["× Multiplier les rangées par les pupitres d'une rangée", "+ Additionner les pupitres du fond", "− Soustraire les pupitres du fond", "÷ Diviser les pupitres par les rangées"], "correctSequence": [0, 1]},
+    "answer": 29, "unit": "pupitres", "intermediate": [{"value": 24, "label": "Les pupitres dans les rangées"}],
+    "wrongAnswerTypes": {"24": "intermediate_as_answer", "15": "wrong_operation", "10": "wrong_operation", "120": "wrong_operation", "11": "wrong_numbers"},
+    "explanation": "On compte les pupitres des rangées (4 × 6 = 24), puis on ajoute ceux du fond : 24 + 5 = 29 pupitres."
+  },
+  {
+    "id": "p08", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Félix a 17 $.", "Il a 8 $ de moins qu'Anna.", "Ils mettent leur argent ensemble.", "Combien d'argent ont-ils en tout ?"],
+    "question": "Combien d'argent ont-ils en tout ?",
+    "numbers": [{"value": 17, "relevant": true}, {"value": 8, "relevant": true}],
+    "asked": {"options": ["L'argent de Félix", "L'argent d'Anna", "La différence entre leur argent", "L'argent qu'ils ont en tout"], "correct": 3},
+    "plan": {"options": ["+ Trouver l'argent d'Anna : additionner", "− Trouver l'argent d'Anna : soustraire", "+ Additionner l'argent de Félix et d'Anna", "× Multiplier l'argent de Félix par 2"], "correctSequence": [0, 2]},
+    "answer": 42, "unit": "$", "intermediate": [{"value": 25, "label": "L'argent d'Anna"}],
+    "wrongAnswerTypes": {"25": "intermediate_as_answer", "9": "wrong_operation", "26": "wrong_operation", "34": "wrong_numbers"},
+    "explanation": "Félix a 8 $ de moins, donc Anna a 17 + 8 = 25 $. Ensemble : 17 + 25 = 42 $."
+  },
+  {
+    "id": "p09", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Un autobus transporte 36 personnes.", "À l'arrêt, 14 personnes descendent.", "Puis 9 personnes montent.", "Combien y a-t-il de personnes maintenant ?"],
+    "question": "Combien y a-t-il de personnes maintenant ?",
+    "numbers": [{"value": 36, "relevant": true}, {"value": 14, "relevant": true}, {"value": 9, "relevant": true}],
+    "asked": {"options": ["Le nombre de personnes descendues", "Le nombre de personnes à la fin", "Le nombre de personnes après la descente", "Le nombre de personnes montées"], "correct": 1},
+    "plan": {"options": ["− Soustraire les personnes qui descendent", "+ Additionner les personnes qui montent", "− Soustraire les personnes qui montent", "+ Additionner les personnes qui descendent"], "correctSequence": [0, 1]},
+    "answer": 31, "unit": "personnes", "intermediate": [{"value": 22, "label": "Les personnes après la descente"}],
+    "wrongAnswerTypes": {"22": "intermediate_as_answer", "41": "wrong_operation", "59": "wrong_operation", "13": "wrong_operation", "5": "wrong_numbers"},
+    "explanation": "D'abord 36 − 14 = 22 personnes, puis 22 + 9 = 31 personnes."
+  },
+  {
+    "id": "p10", "schema": "compare", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["Un chandail coûte 25 $.", "Une casquette coûte 9 $ de moins que le chandail.", "Des bas coûtent 4 $.", "Combien coûtent les trois articles ensemble ?"],
+    "question": "Combien coûtent les trois articles ensemble ?",
+    "numbers": [{"value": 25, "relevant": true}, {"value": 9, "relevant": true}, {"value": 4, "relevant": true}],
+    "asked": {"options": ["Le prix de la casquette", "Le prix des trois articles", "Le prix du chandail et des bas", "L'écart de prix entre le chandail et la casquette"], "correct": 1},
+    "plan": {"options": ["− Soustraire 9 $ du prix du chandail", "+ Additionner le chandail et la casquette", "+ Additionner le prix des bas", "× Multiplier le prix des bas par 3", "+ Additionner 9 $ au prix du chandail"], "correctSequence": [0, 1, 2]},
+    "answer": 45, "unit": "$", "intermediate": [{"value": 16, "label": "Le prix de la casquette"}, {"value": 41, "label": "Le prix du chandail et de la casquette"}],
+    "wrongAnswerTypes": {"16": "intermediate_as_answer", "41": "intermediate_as_answer", "38": "wrong_operation", "34": "wrong_operation", "29": "wrong_numbers"},
+    "explanation": "Casquette : 25 − 9 = 16 $. Chandail et casquette : 25 + 16 = 41 $. Avec les bas : 41 + 4 = 45 $."
+  },
+  {
+    "id": "p11", "schema": "change", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["Une cabane à sucre a 4 bidons de sirop.", "Chaque bidon contient 2,5 litres.", "Elle garde 2 litres pour la maison.", "Elle verse le reste dans des pots de 2 litres.", "Combien de pots remplit-elle ?"],
+    "question": "Combien de pots remplit-elle ?",
+    "numbers": [{"value": 4, "relevant": true}, {"value": 2.5, "relevant": true}, {"value": 2, "relevant": true}, {"value": 2, "relevant": true}],
+    "asked": {"options": ["Le nombre de litres de sirop en tout", "Le nombre de litres à verser dans les pots", "Le nombre de pots remplis", "La grandeur d'un pot"], "correct": 2},
+    "plan": {"options": ["× Multiplier les bidons par les litres d'un bidon", "− Soustraire les litres gardés", "÷ Diviser les litres restants par la grandeur d'un pot", "+ Additionner les litres gardés", "÷ Diviser les litres par le nombre de bidons"], "correctSequence": [0, 1, 2]},
+    "answer": 4, "unit": "pots", "intermediate": [{"value": 10, "label": "Les litres de sirop en tout"}, {"value": 8, "label": "Les litres à verser dans les pots"}],
+    "wrongAnswerTypes": {"10": "intermediate_as_answer", "8": "intermediate_as_answer", "5": "wrong_numbers", "12": "wrong_operation", "20": "wrong_operation"},
+    "explanation": "En tout : 4 × 2,5 = 10 litres. Il reste 10 − 2 = 8 litres. Avec des pots de 2 litres : 8 ÷ 2 = 4 pots."
+  },
+  {
+    "id": "p12", "schema": "change", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "end",
+    "chunks": ["Une bouteille contient 1,5 litre d'eau.", "Marc boit 0,4 litre.", "Combien d'eau reste-t-il ?"],
+    "question": "Combien d'eau reste-t-il ?",
+    "numbers": [{"value": 1.5, "relevant": true}, {"value": 0.4, "relevant": true}],
+    "asked": {"options": ["La quantité d'eau que Marc boit", "La quantité d'eau au départ", "La quantité d'eau qui reste"], "correct": 2},
+    "plan": {"options": ["+ Additionner", "− Soustraire", "× Multiplier", "÷ Diviser"], "correctSequence": [1]},
+    "answer": 1.1, "unit": "litre", "intermediate": [],
+    "wrongAnswerTypes": {"1.9": "wrong_operation", "0.6": "wrong_operation"},
+    "explanation": "On cherche ce qui reste : 1,5 − 0,4 = 1,1 litre."
+  }
+]

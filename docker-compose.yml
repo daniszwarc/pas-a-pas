@@ -1,0 +1,17 @@
+services:
+  pasapas:
+    build: .
+    container_name: pasapas
+    restart: unless-stopped
+    networks:
+      - n8n_default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pasapas.rule=Host(`pasapas.daniszwarc.cloud`)"
+      - "traefik.http.routers.pasapas.entrypoints=websecure"
+      - "traefik.http.routers.pasapas.tls.certresolver=mytlschallenge"
+      - "traefik.http.services.pasapas.loadbalancer.server.port=80"
+
+networks:
+  n8n_default:
+    external: true
