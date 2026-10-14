@@ -127,6 +127,7 @@ export function toAttempt(s, { now, settings, sessionElapsedMs, pauseShown }) {
   return {
     timestamp: new Date(now).toISOString(),
     problemId: p.id,
+    level: p.level,
     schema: p.schema,
     keywordConsistency: p.keywordConsistency,
     steps: p.steps,

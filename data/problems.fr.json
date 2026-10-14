@@ -1,6 +1,6 @@
 [
   {
-    "id": "p01", "schema": "combine", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "end",
+    "id": "p01", "level": "sec1", "schema": "combine", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "end",
     "chunks": ["Léa a 12 billes rouges.", "Elle a aussi 15 billes bleues.", "Combien de billes a-t-elle en tout ?"],
     "question": "Combien de billes a-t-elle en tout ?",
     "numbers": [{"value": 12, "relevant": true}, {"value": 15, "relevant": true}],
@@ -11,7 +11,7 @@
     "explanation": "On cherche le total : on additionne 12 et 15, ce qui donne 27 billes."
   },
   {
-    "id": "p02", "schema": "change", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "end",
+    "id": "p02", "level": "sec1", "schema": "change", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "end",
     "chunks": ["Samuel a 45 $.", "Il achète un livre à 18 $.", "Combien d'argent lui reste-t-il ?"],
     "question": "Combien d'argent lui reste-t-il ?",
     "numbers": [{"value": 45, "relevant": true}, {"value": 18, "relevant": true}],
@@ -22,7 +22,7 @@
     "explanation": "On cherche ce qui reste : on soustrait 18 de 45, ce qui donne 27 $."
   },
   {
-    "id": "p03", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 1, "questionPosition": "end",
+    "id": "p03", "level": "sec1", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 1, "questionPosition": "end",
     "chunks": ["Zoé a 35 autocollants.", "Elle en a 9 de plus que Nao.", "Combien d'autocollants Nao a-t-il ?"],
     "question": "Combien d'autocollants Nao a-t-il ?",
     "numbers": [{"value": 35, "relevant": true}, {"value": 9, "relevant": true}],
@@ -33,7 +33,7 @@
     "explanation": "Zoé en a 9 de plus, donc Nao en a 9 de moins : 35 − 9 = 26 autocollants."
   },
   {
-    "id": "p04", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 1, "questionPosition": "start",
+    "id": "p04", "level": "sec1", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 1, "questionPosition": "start",
     "chunks": ["Combien de buts Émile a-t-il marqués ?", "Alex a marqué 17 buts.", "Il en a marqué 6 de moins qu'Émile."],
     "question": "Combien de buts Émile a-t-il marqués ?",
     "numbers": [{"value": 17, "relevant": true}, {"value": 6, "relevant": true}],
@@ -44,7 +44,7 @@
     "explanation": "Alex en a 6 de moins qu'Émile, donc Émile en a 6 de plus : 17 + 6 = 23 buts."
   },
   {
-    "id": "p05", "schema": "combine", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "start",
+    "id": "p05", "level": "sec1", "schema": "combine", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "start",
     "chunks": ["Combien de personnes y a-t-il dans l'autobus ?", "Il y a 23 filles.", "Il y a 19 garçons.", "L'autobus part à 8 heures."],
     "question": "Combien de personnes y a-t-il dans l'autobus ?",
     "numbers": [{"value": 23, "relevant": true}, {"value": 19, "relevant": true}, {"value": 8, "relevant": false}],
@@ -55,7 +55,7 @@
     "explanation": "On cherche le total des personnes : 23 + 19 = 42. L'heure du départ ne sert pas."
   },
   {
-    "id": "p06", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "id": "p06", "level": "sec1", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
     "chunks": ["Nina a 50 $.", "Elle achète 3 cahiers.", "Chaque cahier coûte 8 $.", "Combien d'argent lui reste-t-il ?"],
     "question": "Combien d'argent lui reste-t-il ?",
     "numbers": [{"value": 50, "relevant": true}, {"value": 3, "relevant": true}, {"value": 8, "relevant": true}],
@@ -66,7 +66,7 @@
     "explanation": "On trouve d'abord le prix des 3 cahiers (3 × 8 = 24 $), puis on le soustrait de 50 $ : il reste 26 $."
   },
   {
-    "id": "p07", "schema": "combine", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "id": "p07", "level": "sec1", "schema": "combine", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
     "chunks": ["Une classe a 4 rangées de 6 pupitres.", "Il y a aussi 5 pupitres au fond.", "Combien y a-t-il de pupitres en tout ?"],
     "question": "Combien y a-t-il de pupitres en tout ?",
     "numbers": [{"value": 4, "relevant": true}, {"value": 6, "relevant": true}, {"value": 5, "relevant": true}],
@@ -77,7 +77,7 @@
     "explanation": "On compte les pupitres des rangées (4 × 6 = 24), puis on ajoute ceux du fond : 24 + 5 = 29 pupitres."
   },
   {
-    "id": "p08", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 2, "questionPosition": "end",
+    "id": "p08", "level": "sec1", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 2, "questionPosition": "end",
     "chunks": ["Félix a 17 $.", "Il a 8 $ de moins qu'Anna.", "Ils mettent leur argent ensemble.", "Combien d'argent ont-ils en tout ?"],
     "question": "Combien d'argent ont-ils en tout ?",
     "numbers": [{"value": 17, "relevant": true}, {"value": 8, "relevant": true}],
@@ -88,7 +88,7 @@
     "explanation": "Félix a 8 $ de moins, donc Anna a 17 + 8 = 25 $. Ensemble : 17 + 25 = 42 $."
   },
   {
-    "id": "p09", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "id": "p09", "level": "sec1", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
     "chunks": ["Un autobus transporte 36 personnes.", "À l'arrêt, 14 personnes descendent.", "Puis 9 personnes montent.", "Combien y a-t-il de personnes maintenant ?"],
     "question": "Combien y a-t-il de personnes maintenant ?",
     "numbers": [{"value": 36, "relevant": true}, {"value": 14, "relevant": true}, {"value": 9, "relevant": true}],
@@ -99,7 +99,7 @@
     "explanation": "D'abord 36 − 14 = 22 personnes, puis 22 + 9 = 31 personnes."
   },
   {
-    "id": "p10", "schema": "compare", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "id": "p10", "level": "sec1", "schema": "compare", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
     "chunks": ["Un chandail coûte 25 $.", "Une casquette coûte 9 $ de moins que le chandail.", "Des bas coûtent 4 $.", "Combien coûtent les trois articles ensemble ?"],
     "question": "Combien coûtent les trois articles ensemble ?",
     "numbers": [{"value": 25, "relevant": true}, {"value": 9, "relevant": true}, {"value": 4, "relevant": true}],
@@ -110,7 +110,7 @@
     "explanation": "Casquette : 25 − 9 = 16 $. Chandail et casquette : 25 + 16 = 41 $. Avec les bas : 41 + 4 = 45 $."
   },
   {
-    "id": "p11", "schema": "change", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "id": "p11", "level": "sec2", "schema": "change", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
     "chunks": ["Une cabane à sucre a 4 bidons de sirop.", "Chaque bidon contient 2,5 litres.", "Elle garde 2 litres pour la maison.", "Elle verse le reste dans des pots de 2 litres.", "Combien de pots remplit-elle ?"],
     "question": "Combien de pots remplit-elle ?",
     "numbers": [{"value": 4, "relevant": true}, {"value": 2.5, "relevant": true}, {"value": 2, "relevant": true}, {"value": 2, "relevant": true}],
@@ -121,7 +121,7 @@
     "explanation": "En tout : 4 × 2,5 = 10 litres. Il reste 10 − 2 = 8 litres. Avec des pots de 2 litres : 8 ÷ 2 = 4 pots."
   },
   {
-    "id": "p12", "schema": "change", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "end",
+    "id": "p12", "level": "sec1", "schema": "change", "keywordConsistency": "consistent", "steps": 1, "questionPosition": "end",
     "chunks": ["Une bouteille contient 1,5 litre d'eau.", "Marc boit 0,4 litre.", "Combien d'eau reste-t-il ?"],
     "question": "Combien d'eau reste-t-il ?",
     "numbers": [{"value": 1.5, "relevant": true}, {"value": 0.4, "relevant": true}],
@@ -130,5 +130,269 @@
     "answer": 1.1, "unit": "litre", "intermediate": [],
     "wrongAnswerTypes": {"1.9": "wrong_operation", "0.6": "wrong_operation"},
     "explanation": "On cherche ce qui reste : 1,5 − 0,4 = 1,1 litre."
+  },
+  {
+    "id": "p13", "level": "sec1", "schema": "combine", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Un jardin rectangulaire mesure 8 m de long.", "Il mesure 5 m de large.", "On met une clôture tout autour.", "Quelle longueur de clôture faut-il ?"],
+    "question": "Quelle longueur de clôture faut-il ?",
+    "numbers": [{"value": 8, "relevant": true}, {"value": 5, "relevant": true}],
+    "asked": {"options": ["La longueur de la clôture autour du jardin", "L'aire du jardin", "La longueur du jardin", "La largeur du jardin"], "correct": 0},
+    "plan": {"options": ["+ Additionner la longueur et la largeur", "× Multiplier cette somme par 2", "× Multiplier la longueur par la largeur", "− Soustraire la largeur de la longueur"], "correctSequence": [0, 1]},
+    "answer": 26, "unit": "m", "intermediate": [{"value": 13, "label": "La longueur et la largeur ensemble"}],
+    "wrongAnswerTypes": {"13": "intermediate_as_answer", "40": "wrong_operation", "21": "wrong_numbers"},
+    "explanation": "Le tour du jardin : 8 + 5 = 13 m, puis on double : 13 × 2 = 26 m."
+  },
+  {
+    "id": "p14", "level": "sec2", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Un blouson coûte 80 $.", "Il est en solde : 30 % de rabais.", "Quel est le prix du blouson en solde ?"],
+    "question": "Quel est le prix du blouson en solde ?",
+    "numbers": [{"value": 80, "relevant": true}, {"value": 30, "relevant": true}],
+    "asked": {"options": ["Le prix du blouson en solde", "Le montant du rabais", "Le prix du blouson avant le solde"], "correct": 0},
+    "plan": {"options": ["× Calculer 30 % du prix : le rabais", "− Soustraire le rabais du prix", "+ Additionner le rabais au prix", "÷ Diviser le prix par 30"], "correctSequence": [0, 1]},
+    "answer": 56, "unit": "$", "intermediate": [{"value": 24, "label": "Le rabais"}],
+    "wrongAnswerTypes": {"24": "intermediate_as_answer", "104": "wrong_operation", "50": "wrong_numbers"},
+    "explanation": "Le rabais est 30 % de 80 $, soit 24 $. On le soustrait : 80 − 24 = 56 $."
+  },
+  {
+    "id": "p15", "level": "sec2", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Un jeu coûte 40 $ avant les taxes.", "Les taxes sont de 15 %.", "Combien paie-t-on en tout ?"],
+    "question": "Combien paie-t-on en tout ?",
+    "numbers": [{"value": 40, "relevant": true}, {"value": 15, "relevant": true}],
+    "asked": {"options": ["Le prix du jeu avec les taxes", "Le montant des taxes", "Le prix du jeu avant les taxes"], "correct": 0},
+    "plan": {"options": ["× Calculer 15 % du prix : les taxes", "+ Additionner les taxes au prix", "− Soustraire les taxes du prix", "÷ Diviser le prix par 15"], "correctSequence": [0, 1]},
+    "answer": 46, "unit": "$", "intermediate": [{"value": 6, "label": "Le montant des taxes"}],
+    "wrongAnswerTypes": {"6": "intermediate_as_answer", "34": "wrong_operation", "25": "wrong_numbers"},
+    "explanation": "Les taxes sont 15 % de 40 $, soit 6 $. On les ajoute : 40 + 6 = 46 $."
+  },
+  {
+    "id": "p16", "level": "sec2", "schema": "combine", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Une recette de crêpes demande 2 tasses de farine.", "Elle donne 12 crêpes.", "Chloé veut faire 36 crêpes.", "Combien de tasses de farine faut-il ?"],
+    "question": "Combien de tasses de farine faut-il ?",
+    "numbers": [{"value": 2, "relevant": true}, {"value": 12, "relevant": true}, {"value": 36, "relevant": true}],
+    "asked": {"options": ["Le nombre de tasses de farine pour 36 crêpes", "Le nombre de crêpes d'une recette", "Le nombre de recettes à faire"], "correct": 0},
+    "plan": {"options": ["÷ Diviser les crêpes voulues par celles d'une recette", "× Multiplier ce nombre par les tasses de farine", "+ Additionner les crêpes voulues et celles d'une recette", "− Soustraire les crêpes d'une recette des crêpes voulues"], "correctSequence": [0, 1]},
+    "answer": 6, "unit": "tasses", "intermediate": [{"value": 3, "label": "Le nombre de recettes à faire"}],
+    "wrongAnswerTypes": {"3": "intermediate_as_answer", "24": "wrong_operation", "72": "wrong_operation"},
+    "explanation": "Il faut 36 ÷ 12 = 3 recettes, donc 3 × 2 = 6 tasses de farine."
+  },
+  {
+    "id": "p17", "level": "sec2", "schema": "combine", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Une cycliste roule à 18 km/h.", "Elle roule pendant 2,5 heures.", "Puis elle marche 3 km.", "Quelle distance parcourt-elle en tout ?"],
+    "question": "Quelle distance parcourt-elle en tout ?",
+    "numbers": [{"value": 18, "relevant": true}, {"value": 2.5, "relevant": true}, {"value": 3, "relevant": true}],
+    "asked": {"options": ["La distance totale parcourue", "La distance faite à vélo", "La vitesse de la cycliste"], "correct": 0},
+    "plan": {"options": ["× Multiplier la vitesse par le temps", "+ Additionner la distance à pied", "÷ Diviser la vitesse par le temps", "− Soustraire la distance à pied"], "correctSequence": [0, 1]},
+    "answer": 48, "unit": "km", "intermediate": [{"value": 45, "label": "La distance faite à vélo"}],
+    "wrongAnswerTypes": {"45": "intermediate_as_answer", "23.5": "wrong_operation", "7.2": "wrong_operation"},
+    "explanation": "À vélo : 18 × 2,5 = 45 km. Avec la marche : 45 + 3 = 48 km."
+  },
+  {
+    "id": "p18", "level": "sec2", "schema": "compare", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "start",
+    "chunks": ["Combien de bonbons reste-t-il à Zack ?", "Mia a 12 bonbons.", "Zack en a 3 fois plus.", "Zack mange 5 bonbons.", "Il a 9 ans."],
+    "question": "Combien de bonbons reste-t-il à Zack ?",
+    "numbers": [{"value": 12, "relevant": true}, {"value": 3, "relevant": true}, {"value": 5, "relevant": true}, {"value": 9, "relevant": false}],
+    "asked": {"options": ["Le nombre de bonbons qui reste à Zack", "Le nombre de bonbons de Mia", "Le nombre de bonbons mangés par Zack", "L'âge de Zack"], "correct": 0},
+    "plan": {"options": ["× Multiplier les bonbons de Mia par 3", "− Soustraire les bonbons mangés", "+ Additionner les bonbons mangés", "÷ Diviser les bonbons de Mia par 3"], "correctSequence": [0, 1]},
+    "answer": 31, "unit": "bonbons", "intermediate": [{"value": 36, "label": "Les bonbons de Zack au départ"}],
+    "wrongAnswerTypes": {"36": "intermediate_as_answer", "41": "wrong_operation", "4": "wrong_operation", "7": "wrong_numbers"},
+    "explanation": "Zack en a 12 × 3 = 36 au départ. Après en avoir mangé 5 : 36 − 5 = 31. Son âge ne sert pas."
+  },
+  {
+    "id": "p19", "level": "sec2", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Une règle coûte 3,75 $.", "Elle coûte 1,25 $ de moins qu'un compas.", "Léa achète la règle et le compas.", "Combien paie-t-elle en tout ?"],
+    "question": "Combien paie-t-elle en tout ?",
+    "numbers": [{"value": 3.75, "relevant": true}, {"value": 1.25, "relevant": true}],
+    "asked": {"options": ["Le prix de la règle et du compas", "Le prix du compas", "Le prix de la règle", "L'écart de prix entre les deux"], "correct": 0},
+    "plan": {"options": ["+ Trouver le prix du compas : additionner", "− Trouver le prix du compas : soustraire", "+ Additionner le prix de la règle et du compas", "× Multiplier le prix de la règle par 2"], "correctSequence": [0, 2]},
+    "answer": 8.75, "unit": "$", "intermediate": [{"value": 5, "label": "Le prix du compas"}],
+    "wrongAnswerTypes": {"5": "intermediate_as_answer", "2.5": "wrong_operation", "6.25": "wrong_operation"},
+    "explanation": "La règle coûte 1,25 $ de moins, donc le compas coûte 3,75 + 1,25 = 5 $. Ensemble : 3,75 + 5 = 8,75 $."
+  },
+  {
+    "id": "p20", "level": "sec2", "schema": "combine", "keywordConsistency": "inconsistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Un panier contient 5,5 kg de fruits en tout.", "Il y a 2,3 kg de pommes.", "Il y a 1,4 kg de bananes.", "Le reste, ce sont des poires.", "Combien de kilos de poires y a-t-il ?"],
+    "question": "Combien de kilos de poires y a-t-il ?",
+    "numbers": [{"value": 5.5, "relevant": true}, {"value": 2.3, "relevant": true}, {"value": 1.4, "relevant": true}],
+    "asked": {"options": ["Le nombre de kilos de poires", "Le nombre de kilos de fruits en tout", "Le nombre de kilos de pommes et de bananes"], "correct": 0},
+    "plan": {"options": ["+ Additionner les pommes et les bananes", "− Soustraire ce total des fruits en tout", "− Soustraire seulement les pommes", "+ Additionner tous les nombres"], "correctSequence": [0, 1]},
+    "answer": 1.8, "unit": "kg", "intermediate": [{"value": 3.7, "label": "Les kilos de pommes et de bananes"}],
+    "wrongAnswerTypes": {"3.7": "intermediate_as_answer", "3.2": "wrong_numbers", "9.2": "wrong_operation", "4.1": "wrong_numbers"},
+    "explanation": "Pommes et bananes : 2,3 + 1,4 = 3,7 kg. Il reste 5,5 − 3,7 = 1,8 kg de poires."
+  },
+  {
+    "id": "p21", "level": "sec2", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Sam a 30 $.", "Il achète 3 cahiers identiques.", "Il lui reste 6 $.", "Quel est le prix d'un cahier ?"],
+    "question": "Quel est le prix d'un cahier ?",
+    "numbers": [{"value": 30, "relevant": true}, {"value": 3, "relevant": true}, {"value": 6, "relevant": true}],
+    "asked": {"options": ["Le prix d'un cahier", "Le prix des 3 cahiers", "L'argent qui reste à Sam"], "correct": 0},
+    "plan": {"options": ["− Soustraire l'argent qui reste de l'argent de départ", "÷ Diviser l'argent dépensé par le nombre de cahiers", "× Multiplier l'argent dépensé par le nombre de cahiers", "+ Additionner l'argent qui reste"], "correctSequence": [0, 1]},
+    "answer": 8, "unit": "$", "intermediate": [{"value": 24, "label": "L'argent dépensé pour les cahiers"}],
+    "wrongAnswerTypes": {"24": "intermediate_as_answer", "10": "wrong_operation", "27": "wrong_numbers", "2": "wrong_numbers"},
+    "explanation": "Sam a dépensé 30 − 6 = 24 $ pour 3 cahiers. Un cahier coûte 24 ÷ 3 = 8 $."
+  },
+  {
+    "id": "p22", "level": "sec2", "schema": "change", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["Le fromage coûte 12 $ le kilo.", "Alice achète 0,5 kg de fromage.", "Elle achète aussi un pain à 3,50 $.", "Elle paie avec 20 $.", "Combien d'argent la caissière lui rend-elle ?"],
+    "question": "Combien d'argent la caissière lui rend-elle ?",
+    "numbers": [{"value": 12, "relevant": true}, {"value": 0.5, "relevant": true}, {"value": 3.5, "relevant": true}, {"value": 20, "relevant": true}],
+    "asked": {"options": ["L'argent que la caissière rend à Alice", "Le prix total des achats", "Le prix du fromage"], "correct": 0},
+    "plan": {"options": ["× Multiplier le prix du kilo par les kilos achetés", "+ Additionner le prix du pain", "− Soustraire le total de l'argent donné", "÷ Diviser le prix du kilo par les kilos achetés", "+ Additionner le total à l'argent donné"], "correctSequence": [0, 1, 2]},
+    "answer": 10.5, "unit": "$", "intermediate": [{"value": 6, "label": "Le prix du fromage"}, {"value": 9.5, "label": "Le prix total des achats"}],
+    "wrongAnswerTypes": {"6": "intermediate_as_answer", "9.5": "intermediate_as_answer", "14": "wrong_numbers", "24": "wrong_operation"},
+    "explanation": "Le fromage coûte 12 × 0,5 = 6 $. Avec le pain : 6 + 3,50 = 9,50 $. On rend 20 − 9,50 = 10,50 $."
+  },
+  {
+    "id": "p23", "level": "sec2", "schema": "combine", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["Une recette de jus demande 2 mesures de concentré.", "Elle demande aussi 5 mesures d'eau.", "Samuel utilise 6 mesures de concentré.", "Combien de mesures de jus obtient-il en tout ?"],
+    "question": "Combien de mesures de jus obtient-il en tout ?",
+    "numbers": [{"value": 2, "relevant": true}, {"value": 5, "relevant": true}, {"value": 6, "relevant": true}],
+    "asked": {"options": ["Le nombre de mesures de jus en tout", "Le nombre de mesures d'eau", "Le nombre de mesures de concentré"], "correct": 0},
+    "plan": {"options": ["÷ Diviser le concentré utilisé par celui d'une recette", "× Multiplier ce nombre par les mesures d'eau d'une recette", "+ Additionner le concentré et l'eau", "− Soustraire le concentré de l'eau", "× Multiplier le concentré par l'eau"], "correctSequence": [0, 1, 2]},
+    "answer": 21, "unit": "mesures", "intermediate": [{"value": 3, "label": "Le nombre de recettes"}, {"value": 15, "label": "Les mesures d'eau"}],
+    "wrongAnswerTypes": {"15": "intermediate_as_answer", "3": "intermediate_as_answer", "11": "wrong_numbers", "30": "wrong_operation"},
+    "explanation": "Samuel fait 6 ÷ 2 = 3 recettes, donc 3 × 5 = 15 mesures d'eau. En tout : 6 + 15 = 21 mesures."
+  },
+  {
+    "id": "p24", "level": "sec2", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "start",
+    "chunks": ["Combien de pots Jade remplit-elle ?", "Jade a 7,5 litres de confiture.", "Elle en garde 1,5 litre.", "Chaque pot contient 0,25 litre."],
+    "question": "Combien de pots Jade remplit-elle ?",
+    "numbers": [{"value": 7.5, "relevant": true}, {"value": 1.5, "relevant": true}, {"value": 0.25, "relevant": true}],
+    "asked": {"options": ["Le nombre de pots remplis", "Le nombre de litres à mettre en pots", "Le nombre de litres gardés"], "correct": 0},
+    "plan": {"options": ["− Soustraire les litres gardés", "÷ Diviser les litres restants par la grandeur d'un pot", "× Multiplier les litres restants par la grandeur d'un pot", "+ Additionner les litres gardés"], "correctSequence": [0, 1]},
+    "answer": 24, "unit": "pots", "intermediate": [{"value": 6, "label": "Les litres à mettre en pots"}],
+    "wrongAnswerTypes": {"6": "intermediate_as_answer", "30": "wrong_numbers", "36": "wrong_operation"},
+    "explanation": "Il reste 7,5 − 1,5 = 6 litres. Avec des pots de 0,25 litre : 6 ÷ 0,25 = 24 pots."
+  },
+  {
+    "id": "p25", "level": "sec3", "schema": "change", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Le loyer de Marc est de 650 $ par mois.", "Il augmente de 4 %.", "Quel est le nouveau loyer ?"],
+    "question": "Quel est le nouveau loyer ?",
+    "numbers": [{"value": 650, "relevant": true}, {"value": 4, "relevant": true}],
+    "asked": {"options": ["Le nouveau loyer de Marc", "Le montant de l'augmentation", "Le loyer avant l'augmentation"], "correct": 0},
+    "plan": {"options": ["× Calculer 4 % du loyer : l'augmentation", "+ Additionner l'augmentation au loyer", "− Soustraire l'augmentation du loyer", "÷ Diviser le loyer par 4"], "correctSequence": [0, 1]},
+    "answer": 676, "unit": "$", "intermediate": [{"value": 26, "label": "Le montant de l'augmentation"}],
+    "wrongAnswerTypes": {"26": "intermediate_as_answer", "624": "wrong_operation", "654": "wrong_numbers"},
+    "explanation": "L'augmentation est 4 % de 650 $, soit 26 $. Le nouveau loyer : 650 + 26 = 676 $."
+  },
+  {
+    "id": "p26", "level": "sec3", "schema": "change", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["Un forfait de gym coûte 60 $ par mois.", "Le prix augmente de 10 %.", "Karim prend le forfait pour 3 mois.", "Combien paie-t-il en tout ?"],
+    "question": "Combien paie-t-il en tout ?",
+    "numbers": [{"value": 60, "relevant": true}, {"value": 10, "relevant": true}, {"value": 3, "relevant": true}],
+    "asked": {"options": ["Le coût du forfait pour 3 mois", "Le nouveau prix pour un mois", "Le montant de l'augmentation"], "correct": 0},
+    "plan": {"options": ["× Calculer 10 % du prix : l'augmentation", "+ Additionner l'augmentation au prix mensuel", "× Multiplier le nouveau prix par le nombre de mois", "− Soustraire l'augmentation du prix mensuel", "÷ Diviser le nouveau prix par le nombre de mois"], "correctSequence": [0, 1, 2]},
+    "answer": 198, "unit": "$", "intermediate": [{"value": 6, "label": "Le montant de l'augmentation"}, {"value": 66, "label": "Le nouveau prix pour un mois"}],
+    "wrongAnswerTypes": {"66": "intermediate_as_answer", "6": "intermediate_as_answer", "180": "wrong_numbers", "18": "wrong_operation"},
+    "explanation": "L'augmentation est 10 % de 60 $, soit 6 $. Nouveau prix : 60 + 6 = 66 $. Pour 3 mois : 66 × 3 = 198 $."
+  },
+  {
+    "id": "p27", "level": "sec3", "schema": "compare", "keywordConsistency": "inconsistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["Le téléviseur A coûte 500 $.", "Le téléviseur B coûte 20 % de moins que A.", "Léa achète les deux téléviseurs.", "Combien paie-t-elle en tout ?"],
+    "question": "Combien paie-t-elle en tout ?",
+    "numbers": [{"value": 500, "relevant": true}, {"value": 20, "relevant": true}],
+    "asked": {"options": ["Le prix des deux téléviseurs", "Le prix du téléviseur B", "L'écart de prix entre A et B"], "correct": 0},
+    "plan": {"options": ["× Calculer 20 % du prix de A : l'écart", "− Soustraire l'écart du prix de A", "+ Additionner le prix de A et celui de B", "+ Additionner l'écart au prix de A", "× Multiplier le prix de A par 2"], "correctSequence": [0, 1, 2]},
+    "answer": 900, "unit": "$", "intermediate": [{"value": 100, "label": "L'écart de prix entre A et B"}, {"value": 400, "label": "Le prix du téléviseur B"}],
+    "wrongAnswerTypes": {"100": "intermediate_as_answer", "400": "intermediate_as_answer", "600": "wrong_operation", "1000": "wrong_numbers"},
+    "explanation": "L'écart est 20 % de 500 $, soit 100 $. B coûte 500 − 100 = 400 $. Ensemble : 500 + 400 = 900 $."
+  },
+  {
+    "id": "p28", "level": "sec3", "schema": "combine", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "start",
+    "chunks": ["Combien de bouteilles Éva remplit-elle ?", "Éva a un bidon de 4 litres d'eau.", "Elle verse l'eau dans des bouteilles.", "Chaque bouteille contient 500 mL."],
+    "question": "Combien de bouteilles Éva remplit-elle ?",
+    "numbers": [{"value": 4, "relevant": true}, {"value": 500, "relevant": true}],
+    "asked": {"options": ["Le nombre de bouteilles remplies", "Le nombre de litres d'eau", "Le nombre de mL dans une bouteille"], "correct": 0},
+    "plan": {"options": ["× Convertir les litres en mL : multiplier par 1000", "÷ Diviser les mL d'eau par ceux d'une bouteille", "÷ Diviser les litres d'eau par les mL d'une bouteille", "× Multiplier les litres par les mL d'une bouteille"], "correctSequence": [0, 1]},
+    "answer": 8, "unit": "bouteilles", "intermediate": [{"value": 4000, "label": "Les mL d'eau dans le bidon"}],
+    "wrongAnswerTypes": {"4000": "intermediate_as_answer", "0.008": "wrong_operation", "2000": "wrong_operation"},
+    "explanation": "4 litres, c'est 4 × 1000 = 4000 mL. Avec des bouteilles de 500 mL : 4000 ÷ 500 = 8 bouteilles."
+  },
+  {
+    "id": "p29", "level": "sec3", "schema": "combine", "keywordConsistency": "inconsistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["La moyenne de Zoé aux 4 examens est 80.", "Elle a eu 72 au premier.", "Elle a eu 88 au deuxième.", "Elle a eu 78 au troisième.", "Quelle note a-t-elle eue au dernier examen ?"],
+    "question": "Quelle note a-t-elle eue au dernier examen ?",
+    "numbers": [{"value": 4, "relevant": true}, {"value": 80, "relevant": true}, {"value": 72, "relevant": true}, {"value": 88, "relevant": true}, {"value": 78, "relevant": true}],
+    "asked": {"options": ["La note de Zoé au dernier examen", "La moyenne de Zoé aux 4 examens", "Le total des notes de Zoé"], "correct": 0},
+    "plan": {"options": ["× Trouver le total des 4 notes : multiplier la moyenne par 4", "+ Additionner les 3 notes connues", "− Soustraire ce total du total des 4 notes", "÷ Diviser la somme des notes par 4", "+ Additionner la moyenne et les notes"], "correctSequence": [0, 1, 2]},
+    "answer": 82, "unit": "points", "intermediate": [{"value": 320, "label": "Le total des 4 notes"}, {"value": 238, "label": "Le total des 3 notes connues"}],
+    "wrongAnswerTypes": {"320": "intermediate_as_answer", "238": "intermediate_as_answer", "558": "wrong_operation", "8": "wrong_numbers"},
+    "explanation": "Le total des 4 notes est 4 × 80 = 320. Les 3 notes connues : 72 + 88 + 78 = 238. La dernière note : 320 − 238 = 82."
+  },
+  {
+    "id": "p30", "level": "sec3", "schema": "combine", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Un plombier demande 45 $ pour se déplacer.", "Il demande aussi 35 $ par heure.", "Il commence à 9 h.", "Il travaille 3 heures.", "Combien le client paie-t-il en tout ?"],
+    "question": "Combien le client paie-t-il en tout ?",
+    "numbers": [{"value": 45, "relevant": true}, {"value": 35, "relevant": true}, {"value": 9, "relevant": false}, {"value": 3, "relevant": true}],
+    "asked": {"options": ["Le total à payer par le client", "Le prix d'une heure de travail", "Le prix du déplacement"], "correct": 0},
+    "plan": {"options": ["× Multiplier le prix d'une heure par les heures", "+ Additionner le prix du déplacement", "− Soustraire le prix du déplacement", "+ Additionner le prix d'une heure et le déplacement"], "correctSequence": [0, 1]},
+    "answer": 150, "unit": "$", "intermediate": [{"value": 105, "label": "Le prix des 3 heures de travail"}],
+    "wrongAnswerTypes": {"105": "intermediate_as_answer", "80": "wrong_numbers", "135": "wrong_numbers"},
+    "explanation": "Le travail coûte 35 × 3 = 105 $. Avec le déplacement : 105 + 45 = 150 $. L'heure de début ne sert pas."
+  },
+  {
+    "id": "p31", "level": "sec3", "schema": "combine", "keywordConsistency": "inconsistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Un taxi demande 4 $ au départ.", "Il demande ensuite 1,50 $ par kilomètre.", "La course de Nadia coûte 19 $.", "Combien de kilomètres Nadia a-t-elle faits ?"],
+    "question": "Combien de kilomètres Nadia a-t-elle faits ?",
+    "numbers": [{"value": 4, "relevant": true}, {"value": 1.5, "relevant": true}, {"value": 19, "relevant": true}],
+    "asked": {"options": ["Le nombre de kilomètres de la course", "Le prix de la course", "Le prix des kilomètres"], "correct": 0},
+    "plan": {"options": ["− Soustraire le prix de départ du prix de la course", "÷ Diviser le reste par le prix d'un kilomètre", "+ Additionner le prix de départ à celui de la course", "× Multiplier le reste par le prix d'un kilomètre"], "correctSequence": [0, 1]},
+    "answer": 10, "unit": "km", "intermediate": [{"value": 15, "label": "Le prix des kilomètres"}],
+    "wrongAnswerTypes": {"15": "intermediate_as_answer", "23": "wrong_operation", "17.5": "wrong_numbers", "22.5": "wrong_operation"},
+    "explanation": "Sans le prix de départ : 19 − 4 = 15 $ pour les kilomètres. Alors 15 ÷ 1,50 = 10 km."
+  },
+  {
+    "id": "p32", "level": "sec3", "schema": "compare", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["Une planche mesure 1,2 m.", "Une autre planche est 3 fois plus longue.", "On les met bout à bout.", "Quelle est la longueur totale, en centimètres ?"],
+    "question": "Quelle est la longueur totale, en centimètres ?",
+    "numbers": [{"value": 1.2, "relevant": true}, {"value": 3, "relevant": true}],
+    "asked": {"options": ["La longueur totale, en centimètres", "La longueur de la 2e planche", "La longueur totale, en mètres"], "correct": 0},
+    "plan": {"options": ["× Multiplier la 1re planche par 3", "+ Additionner la 1re planche à la 2e", "× Convertir en cm : multiplier par 100", "− Soustraire la 1re planche de la 2e", "÷ Convertir en cm : diviser par 100"], "correctSequence": [0, 1, 2]},
+    "answer": 480, "unit": "cm", "intermediate": [{"value": 3.6, "label": "La longueur de la 2e planche"}, {"value": 4.8, "label": "La longueur totale, en mètres"}],
+    "wrongAnswerTypes": {"4.8": "intermediate_as_answer", "3.6": "intermediate_as_answer", "360": "wrong_numbers", "4.2": "wrong_operation"},
+    "explanation": "La 2e planche mesure 1,2 × 3 = 3,6 m. Ensemble : 1,2 + 3,6 = 4,8 m, soit 4,8 × 100 = 480 cm."
+  },
+  {
+    "id": "p33", "level": "sec3", "schema": "combine", "keywordConsistency": "consistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Un mur mesure 4 m de haut et 6 m de large.", "Un litre de peinture couvre 8 mètres carrés.", "Combien de litres faut-il pour peindre le mur ?"],
+    "question": "Combien de litres faut-il pour peindre le mur ?",
+    "numbers": [{"value": 4, "relevant": true}, {"value": 6, "relevant": true}, {"value": 8, "relevant": true}],
+    "asked": {"options": ["Le nombre de litres de peinture", "L'aire du mur", "Le tour du mur"], "correct": 0},
+    "plan": {"options": ["× Multiplier la hauteur par la largeur : l'aire", "÷ Diviser l'aire par ce que couvre un litre", "+ Additionner la hauteur et la largeur", "× Multiplier l'aire par ce que couvre un litre"], "correctSequence": [0, 1]},
+    "answer": 3, "unit": "litres", "intermediate": [{"value": 24, "label": "L'aire du mur"}],
+    "wrongAnswerTypes": {"24": "intermediate_as_answer", "192": "wrong_operation", "1.25": "wrong_numbers"},
+    "explanation": "L'aire du mur est 4 × 6 = 24 mètres carrés. Il faut 24 ÷ 8 = 3 litres de peinture."
+  },
+  {
+    "id": "p34", "level": "sec3", "schema": "combine", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["Une piscine mesure 5 m de long.", "Elle mesure 3 m de large.", "Elle mesure 2 m de profond.", "Un tuyau verse 1,5 mètre cube d'eau par heure.", "Combien d'heures faut-il pour la remplir ?"],
+    "question": "Combien d'heures faut-il pour la remplir ?",
+    "numbers": [{"value": 5, "relevant": true}, {"value": 3, "relevant": true}, {"value": 2, "relevant": true}, {"value": 1.5, "relevant": true}],
+    "asked": {"options": ["Le nombre d'heures pour remplir la piscine", "Le volume de la piscine", "L'aire du fond de la piscine"], "correct": 0},
+    "plan": {"options": ["× Multiplier la longueur par la largeur", "× Multiplier ce résultat par la profondeur", "÷ Diviser le volume par ce que verse le tuyau", "+ Additionner les trois mesures", "× Multiplier le volume par ce que verse le tuyau"], "correctSequence": [0, 1, 2]},
+    "answer": 20, "unit": "heures", "intermediate": [{"value": 15, "label": "L'aire du fond de la piscine"}, {"value": 30, "label": "Le volume de la piscine"}],
+    "wrongAnswerTypes": {"15": "intermediate_as_answer", "30": "intermediate_as_answer", "45": "wrong_operation", "10": "wrong_numbers"},
+    "explanation": "Le fond : 5 × 3 = 15. Le volume : 15 × 2 = 30 mètres cubes. Le temps : 30 ÷ 1,5 = 20 heures."
+  },
+  {
+    "id": "p35", "level": "sec3", "schema": "change", "keywordConsistency": "inconsistent", "steps": 2, "questionPosition": "end",
+    "chunks": ["Une trottinette est en solde à 60 $.", "Son prix a baissé de 20 %.", "Quel était le prix avant le solde ?"],
+    "question": "Quel était le prix avant le solde ?",
+    "numbers": [{"value": 60, "relevant": true}, {"value": 20, "relevant": true}],
+    "asked": {"options": ["Le prix avant le solde", "Le prix en solde", "Le montant du rabais"], "correct": 0},
+    "plan": {"options": ["÷ Trouver 1 % : diviser le prix de solde par 80", "× Multiplier 1 % par 100", "+ Additionner 20 % au prix de solde", "× Calculer 20 % du prix de solde"], "correctSequence": [0, 1]},
+    "answer": 75, "unit": "$", "intermediate": [{"value": 0.75, "label": "Le prix de 1 % du prix de départ"}],
+    "wrongAnswerTypes": {"0.75": "intermediate_as_answer", "72": "wrong_operation", "80": "wrong_numbers", "48": "wrong_operation"},
+    "explanation": "Le prix de solde est 80 % du prix de départ. 60 ÷ 80 = 0,75 $ pour 1 %, puis 0,75 × 100 = 75 $."
+  },
+  {
+    "id": "p36", "level": "sec3", "schema": "compare", "keywordConsistency": "consistent", "steps": 3, "questionPosition": "end",
+    "chunks": ["Tom a lu 18 pages lundi.", "Il a lu 24 pages mardi.", "Il a lu 30 pages mercredi.", "Sa sœur lit 4 pages de plus que la moyenne de Tom.", "Combien de pages sa sœur lit-elle par jour ?"],
+    "question": "Combien de pages sa sœur lit-elle par jour ?",
+    "numbers": [{"value": 18, "relevant": true}, {"value": 24, "relevant": true}, {"value": 30, "relevant": true}, {"value": 4, "relevant": true}],
+    "asked": {"options": ["Le nombre de pages lues par sa sœur par jour", "La moyenne de pages lues par Tom", "Le total de pages lues par Tom"], "correct": 0},
+    "plan": {"options": ["+ Additionner les pages lues par Tom", "÷ Diviser ce total par le nombre de jours", "+ Additionner 4 pages à la moyenne", "− Soustraire 4 pages de la moyenne", "× Multiplier le total par 3"], "correctSequence": [0, 1, 2]},
+    "answer": 28, "unit": "pages", "intermediate": [{"value": 72, "label": "Le total des pages lues par Tom"}, {"value": 24, "label": "La moyenne de pages lues par Tom"}],
+    "wrongAnswerTypes": {"72": "intermediate_as_answer", "24": "intermediate_as_answer", "76": "wrong_operation", "20": "wrong_operation"},
+    "explanation": "Tom a lu 18 + 24 + 30 = 72 pages en 3 jours. Sa moyenne est 72 ÷ 3 = 24 pages. Sa sœur lit 24 + 4 = 28 pages."
   }
 ]

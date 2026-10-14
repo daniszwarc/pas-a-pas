@@ -9,6 +9,8 @@ const noticeEl = document.getElementById('notice');
 const voice = createVoice();
 
 let settings = loadSettings();
+const LEVEL_KEY = 'pas-a-pas.level';
+let level = loadLevel();
 let problems = [];
 let view = 'home'; // home | settings | parents | problem | pause
 let state = null;
@@ -24,6 +26,22 @@ const median = (xs) => {
   const m = s.length >> 1;
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
 };
+
+// ---------- school level (chosen on the Parents screen, kept apart from the display settings) ----------
+function loadLevel() {
+  try {
+    const saved = localStorage.getItem(LEVEL_KEY);
+    return ui.LEVELS.some(([v]) => v === saved) ? saved : 'sec1';
+  } catch {
+    return 'sec1';
+  }
+}
+
+function setLevel(next) {
+  level = next;
+  try { localStorage.setItem(LEVEL_KEY, level); } catch { /* storage blocked: level just won't persist */ }
+  render();
+}
 
 // ---------- settings ----------
 function applySettings() {
@@ -74,8 +92,8 @@ function render() {
     }), animate);
   } else if (view === 'parents') {
     getAttempts().then(
-      (attempts) => show(ui.renderParents(computeStats(attempts), { onExport: () => exportAttempts(attempts), onHome: () => go('home') }), animate),
-      () => show(ui.renderParents(computeStats([]), { onExport: () => {}, onHome: () => go('home') }), animate));
+      (attempts) => show(ui.renderParents(computeStats(attempts), { level, onLevel: setLevel, onExport: () => exportAttempts(attempts), onHome: () => go('home') }), animate),
+      () => show(ui.renderParents(computeStats([]), { level, onLevel: setLevel, onExport: () => {}, onHome: () => go('home') }), animate));
   } else if (view === 'pause') {
     show(ui.renderPause({ onContinue: continueAfterPause, onStop: () => { session = newSession(); go('home'); } }), animate);
   } else {
@@ -150,8 +168,10 @@ async function pickProblem() {
   let counts = {};
   try { for (const a of await getAttempts()) counts[a.problemId] = (counts[a.problemId] || 0) + 1; } catch { counts = {}; }
   const last = state?.problem.id;
-  const pool = problems.filter((p) => p.id !== last);
-  return (pool.length ? pool : problems).reduce((best, p) => ((counts[p.id] || 0) < (counts[best.id] || 0) ? p : best));
+  const atLevel = problems.filter((p) => p.level === level);
+  const all = atLevel.length ? atLevel : problems; // a level with no problems falls back to everything
+  const pool = all.filter((p) => p.id !== last);
+  return (pool.length ? pool : all).reduce((best, p) => ((counts[p.id] || 0) < (counts[best.id] || 0) ? p : best));
 }
 
 async function startNext() {

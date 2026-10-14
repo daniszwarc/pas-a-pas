@@ -323,6 +323,8 @@ export function renderSettings(settings, { onChange, onHome }) {
     choices('Aide pour les données', [[2, 'Nombres en évidence'], [1, 'Nombres en gras'], [0, 'Aucune aide']], settings.dataHelp, (v) => onChange({ dataHelp: v })));
 }
 
+export const LEVELS = [['sec1', 'Secondaire 1'], ['sec2', 'Secondaire 2'], ['sec3', 'Secondaire 3']];
+
 const ERROR_LABELS = {
   intermediate_as_answer: 'Résultat d’une étape donné comme réponse',
   wrong_operation: 'Mauvaise opération',
@@ -331,11 +333,13 @@ const ERROR_LABELS = {
   other: 'Autre',
 };
 
-export function renderParents(stats, { onExport, onHome }) {
+export function renderParents(stats, { level, onLevel, onExport, onHome }) {
   const row = (a, b) => h('tr', {}, h('th', { scope: 'row' }, a), h('td', {}, String(b)));
   return h('section', { class: 'screen' },
     h('div', { class: 'topbar' }, btn('‹ Accueil', onHome, { cls: 'link', key: 'home-top' })),
     title('Espace parents'),
+    choices('Niveau scolaire', LEVELS, level, onLevel),
+    h('p', { class: 'stat' }, `Niveau actuel : ${LEVELS.find(([v]) => v === level)[1]}`),
     h('p', { class: 'stat' }, `Nombre d’essais : ${stats.count}`),
     h('div', { class: 'table-wrap' }, h('table', {},
       h('caption', {}, 'Essais selon le résultat'),
