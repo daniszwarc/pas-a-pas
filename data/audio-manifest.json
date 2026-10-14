@@ -1,0 +1,1559 @@
+{
+  "voice": "ff_siwis",
+  "model": "kokoro",
+  "speed": 0.9,
+  "problems": {
+    "p01": {
+      "chunks": [
+        {
+          "file": "audio/p01-c0.mp3",
+          "hash": "dd16ecc7d13238f7"
+        },
+        {
+          "file": "audio/p01-c1.mp3",
+          "hash": "5026d72d7dec66c5"
+        },
+        {
+          "file": "audio/p01-c2.mp3",
+          "hash": "ac0d62f33019ff01"
+        }
+      ],
+      "question": {
+        "file": "audio/p01-c2.mp3",
+        "hash": "ac0d62f33019ff01"
+      },
+      "asked": [
+        {
+          "file": "audio/p01-a0.mp3",
+          "hash": "bbbbce2b76ec675f"
+        },
+        {
+          "file": "audio/p01-a1.mp3",
+          "hash": "da6537baf98c36f2"
+        },
+        {
+          "file": "audio/p01-a2.mp3",
+          "hash": "d47de6ffd851bf26"
+        },
+        {
+          "file": "audio/p01-a3.mp3",
+          "hash": "395dd3bafe4b1fae"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p01-e.mp3",
+        "hash": "fefae7edd1571856"
+      }
+    },
+    "p02": {
+      "chunks": [
+        {
+          "file": "audio/p02-c0.mp3",
+          "hash": "3a6d74b77dc4ba44"
+        },
+        {
+          "file": "audio/p02-c1.mp3",
+          "hash": "4b204ec96ee8689f"
+        },
+        {
+          "file": "audio/p02-c2.mp3",
+          "hash": "5e1cd8d71170a6cf"
+        }
+      ],
+      "question": {
+        "file": "audio/p02-c2.mp3",
+        "hash": "5e1cd8d71170a6cf"
+      },
+      "asked": [
+        {
+          "file": "audio/p02-a0.mp3",
+          "hash": "7912d9761a288bb7"
+        },
+        {
+          "file": "audio/p02-a1.mp3",
+          "hash": "83daaa56853c94e1"
+        },
+        {
+          "file": "audio/p02-a2.mp3",
+          "hash": "71ca490a63702216"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p02-e.mp3",
+        "hash": "e91cd939320f9bee"
+      }
+    },
+    "p03": {
+      "chunks": [
+        {
+          "file": "audio/p03-c0.mp3",
+          "hash": "ac84047280288ca7"
+        },
+        {
+          "file": "audio/p03-c1.mp3",
+          "hash": "af895899dcd3958e"
+        },
+        {
+          "file": "audio/p03-c2.mp3",
+          "hash": "a92d2985e55b77f5"
+        }
+      ],
+      "question": {
+        "file": "audio/p03-c2.mp3",
+        "hash": "a92d2985e55b77f5"
+      },
+      "asked": [
+        {
+          "file": "audio/p03-a0.mp3",
+          "hash": "3a71cd3549bc1a0b"
+        },
+        {
+          "file": "audio/p03-a1.mp3",
+          "hash": "2cd31d238d2b1ed8"
+        },
+        {
+          "file": "audio/p03-a2.mp3",
+          "hash": "ee63bd0f235b1c9e"
+        },
+        {
+          "file": "audio/p03-a3.mp3",
+          "hash": "c69ef0d0972b55c4"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p03-e.mp3",
+        "hash": "3ccfbab22c828e31"
+      }
+    },
+    "p04": {
+      "chunks": [
+        {
+          "file": "audio/p04-c0.mp3",
+          "hash": "cf47a32c29a9bd54"
+        },
+        {
+          "file": "audio/p04-c1.mp3",
+          "hash": "c9f773a86e5f8b4d"
+        },
+        {
+          "file": "audio/p04-c2.mp3",
+          "hash": "4e76f7a8ef965964"
+        }
+      ],
+      "question": {
+        "file": "audio/p04-c0.mp3",
+        "hash": "cf47a32c29a9bd54"
+      },
+      "asked": [
+        {
+          "file": "audio/p04-a0.mp3",
+          "hash": "f01b962b515d4a72"
+        },
+        {
+          "file": "audio/p04-a1.mp3",
+          "hash": "9ccdff8a1bd3d1a9"
+        },
+        {
+          "file": "audio/p04-a2.mp3",
+          "hash": "8ca8d01c22154fa3"
+        },
+        {
+          "file": "audio/p04-a3.mp3",
+          "hash": "2a443e0deefedc04"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p04-e.mp3",
+        "hash": "c7adb9503e88f567"
+      }
+    },
+    "p05": {
+      "chunks": [
+        {
+          "file": "audio/p05-c0.mp3",
+          "hash": "0f3063534534a674"
+        },
+        {
+          "file": "audio/p05-c1.mp3",
+          "hash": "80fe2f98d8ca924f"
+        },
+        {
+          "file": "audio/p05-c2.mp3",
+          "hash": "2907c62ba3f8e6b0"
+        },
+        {
+          "file": "audio/p05-c3.mp3",
+          "hash": "82e1d82d8aaf79ea"
+        }
+      ],
+      "question": {
+        "file": "audio/p05-c0.mp3",
+        "hash": "0f3063534534a674"
+      },
+      "asked": [
+        {
+          "file": "audio/p05-a0.mp3",
+          "hash": "f33a4860c5b9f070"
+        },
+        {
+          "file": "audio/p05-a1.mp3",
+          "hash": "423cbd8f2e31b203"
+        },
+        {
+          "file": "audio/p05-a2.mp3",
+          "hash": "031e547fe5e18fea"
+        },
+        {
+          "file": "audio/p05-a3.mp3",
+          "hash": "531a768e453dfa3c"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p05-e.mp3",
+        "hash": "026439b30c0e5402"
+      }
+    },
+    "p06": {
+      "chunks": [
+        {
+          "file": "audio/p06-c0.mp3",
+          "hash": "d2b6763d43686b88"
+        },
+        {
+          "file": "audio/p06-c1.mp3",
+          "hash": "8df51ceeb041e48d"
+        },
+        {
+          "file": "audio/p06-c2.mp3",
+          "hash": "a402d6373d2dc592"
+        },
+        {
+          "file": "audio/p06-c3.mp3",
+          "hash": "5e1cd8d71170a6cf"
+        }
+      ],
+      "question": {
+        "file": "audio/p06-c3.mp3",
+        "hash": "5e1cd8d71170a6cf"
+      },
+      "asked": [
+        {
+          "file": "audio/p06-a0.mp3",
+          "hash": "621fc21687bf3e6e"
+        },
+        {
+          "file": "audio/p06-a1.mp3",
+          "hash": "b5ff48b1c5f8b5ba"
+        },
+        {
+          "file": "audio/p06-a2.mp3",
+          "hash": "536394b4ae0bdf63"
+        },
+        {
+          "file": "audio/p06-a3.mp3",
+          "hash": "07b9aaa85b97ee20"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p06-e.mp3",
+        "hash": "654e822e14777a0d"
+      }
+    },
+    "p07": {
+      "chunks": [
+        {
+          "file": "audio/p07-c0.mp3",
+          "hash": "b2954db475ebb9e4"
+        },
+        {
+          "file": "audio/p07-c1.mp3",
+          "hash": "c266661cc9150612"
+        },
+        {
+          "file": "audio/p07-c2.mp3",
+          "hash": "b186293734ae4d9b"
+        }
+      ],
+      "question": {
+        "file": "audio/p07-c2.mp3",
+        "hash": "b186293734ae4d9b"
+      },
+      "asked": [
+        {
+          "file": "audio/p07-a0.mp3",
+          "hash": "0c7c94d5c4bffd2c"
+        },
+        {
+          "file": "audio/p07-a1.mp3",
+          "hash": "996fa308032685ea"
+        },
+        {
+          "file": "audio/p07-a2.mp3",
+          "hash": "42a1b9d6bc2dd899"
+        },
+        {
+          "file": "audio/p07-a3.mp3",
+          "hash": "d1a2b53b7454387f"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p07-e.mp3",
+        "hash": "2e30ea3e690970d9"
+      }
+    },
+    "p08": {
+      "chunks": [
+        {
+          "file": "audio/p08-c0.mp3",
+          "hash": "aef8b27a84f5c548"
+        },
+        {
+          "file": "audio/p08-c1.mp3",
+          "hash": "27fe9ec70a186fb2"
+        },
+        {
+          "file": "audio/p08-c2.mp3",
+          "hash": "70b910b036fea1b4"
+        },
+        {
+          "file": "audio/p08-c3.mp3",
+          "hash": "485054836ee6285d"
+        }
+      ],
+      "question": {
+        "file": "audio/p08-c3.mp3",
+        "hash": "485054836ee6285d"
+      },
+      "asked": [
+        {
+          "file": "audio/p08-a0.mp3",
+          "hash": "f6dce8553351fba2"
+        },
+        {
+          "file": "audio/p08-a1.mp3",
+          "hash": "8be17ac67f96997b"
+        },
+        {
+          "file": "audio/p08-a2.mp3",
+          "hash": "9af285414585fc53"
+        },
+        {
+          "file": "audio/p08-a3.mp3",
+          "hash": "dd94b9360fbfcfc0"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p08-e.mp3",
+        "hash": "3707e1a628f800b2"
+      }
+    },
+    "p09": {
+      "chunks": [
+        {
+          "file": "audio/p09-c0.mp3",
+          "hash": "097738e2d992f75a"
+        },
+        {
+          "file": "audio/p09-c1.mp3",
+          "hash": "a6ad1b047a4fb9a3"
+        },
+        {
+          "file": "audio/p09-c2.mp3",
+          "hash": "231524803207b522"
+        },
+        {
+          "file": "audio/p09-c3.mp3",
+          "hash": "d5b3b39a0989ce87"
+        }
+      ],
+      "question": {
+        "file": "audio/p09-c3.mp3",
+        "hash": "d5b3b39a0989ce87"
+      },
+      "asked": [
+        {
+          "file": "audio/p09-a0.mp3",
+          "hash": "624af4d173a445d5"
+        },
+        {
+          "file": "audio/p09-a1.mp3",
+          "hash": "ae431dbe2051ffb5"
+        },
+        {
+          "file": "audio/p09-a2.mp3",
+          "hash": "55547ad7576b05c7"
+        },
+        {
+          "file": "audio/p09-a3.mp3",
+          "hash": "6469bda2930b55be"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p09-e.mp3",
+        "hash": "4a69d631b80eefa9"
+      }
+    },
+    "p10": {
+      "chunks": [
+        {
+          "file": "audio/p10-c0.mp3",
+          "hash": "bf94e939acb9fd42"
+        },
+        {
+          "file": "audio/p10-c1.mp3",
+          "hash": "9893f0cb2f657eb6"
+        },
+        {
+          "file": "audio/p10-c2.mp3",
+          "hash": "ae50847f403ea08f"
+        },
+        {
+          "file": "audio/p10-c3.mp3",
+          "hash": "bd912fd9fedf776a"
+        }
+      ],
+      "question": {
+        "file": "audio/p10-c3.mp3",
+        "hash": "bd912fd9fedf776a"
+      },
+      "asked": [
+        {
+          "file": "audio/p10-a0.mp3",
+          "hash": "0fb0c4557bdfcb75"
+        },
+        {
+          "file": "audio/p10-a1.mp3",
+          "hash": "0eab1fa253caa388"
+        },
+        {
+          "file": "audio/p10-a2.mp3",
+          "hash": "95ed71193843c11a"
+        },
+        {
+          "file": "audio/p10-a3.mp3",
+          "hash": "2fe95f0aa6a263e2"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p10-e.mp3",
+        "hash": "ea3796fe245cb5ee"
+      }
+    },
+    "p11": {
+      "chunks": [
+        {
+          "file": "audio/p11-c0.mp3",
+          "hash": "e4a7b40288356be2"
+        },
+        {
+          "file": "audio/p11-c1.mp3",
+          "hash": "382abff9eaf299f3"
+        },
+        {
+          "file": "audio/p11-c2.mp3",
+          "hash": "1973538a50a8bbc9"
+        },
+        {
+          "file": "audio/p11-c3.mp3",
+          "hash": "64ecea15cb047967"
+        },
+        {
+          "file": "audio/p11-c4.mp3",
+          "hash": "ebe9d0a9c6fb3870"
+        }
+      ],
+      "question": {
+        "file": "audio/p11-c4.mp3",
+        "hash": "ebe9d0a9c6fb3870"
+      },
+      "asked": [
+        {
+          "file": "audio/p11-a0.mp3",
+          "hash": "016a3940668e9469"
+        },
+        {
+          "file": "audio/p11-a1.mp3",
+          "hash": "fa218249e1737d6e"
+        },
+        {
+          "file": "audio/p11-a2.mp3",
+          "hash": "cc097ef8b210bf3f"
+        },
+        {
+          "file": "audio/p11-a3.mp3",
+          "hash": "11555300cfffb369"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p11-e.mp3",
+        "hash": "c13a2663dbc746a4"
+      }
+    },
+    "p12": {
+      "chunks": [
+        {
+          "file": "audio/p12-c0.mp3",
+          "hash": "58961dbd9a1250fa"
+        },
+        {
+          "file": "audio/p12-c1.mp3",
+          "hash": "2d40433da46d6373"
+        },
+        {
+          "file": "audio/p12-c2.mp3",
+          "hash": "5bf09a9b780b6d13"
+        }
+      ],
+      "question": {
+        "file": "audio/p12-c2.mp3",
+        "hash": "5bf09a9b780b6d13"
+      },
+      "asked": [
+        {
+          "file": "audio/p12-a0.mp3",
+          "hash": "c6d0f8b3842e99e5"
+        },
+        {
+          "file": "audio/p12-a1.mp3",
+          "hash": "dd37b93e47fd37e5"
+        },
+        {
+          "file": "audio/p12-a2.mp3",
+          "hash": "4480e46541e87ef1"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p12-e.mp3",
+        "hash": "00c58fc26f16c1b5"
+      }
+    },
+    "p13": {
+      "chunks": [
+        {
+          "file": "audio/p13-c0.mp3",
+          "hash": "6255d2cf653a13f3"
+        },
+        {
+          "file": "audio/p13-c1.mp3",
+          "hash": "1fe674564dd9c048"
+        },
+        {
+          "file": "audio/p13-c2.mp3",
+          "hash": "65445e85aa2f4376"
+        },
+        {
+          "file": "audio/p13-c3.mp3",
+          "hash": "8278a7a1eb82851c"
+        }
+      ],
+      "question": {
+        "file": "audio/p13-c3.mp3",
+        "hash": "8278a7a1eb82851c"
+      },
+      "asked": [
+        {
+          "file": "audio/p13-a0.mp3",
+          "hash": "963cb3c8ca981606"
+        },
+        {
+          "file": "audio/p13-a1.mp3",
+          "hash": "3dc3c1c8c4d97252"
+        },
+        {
+          "file": "audio/p13-a2.mp3",
+          "hash": "b578809df40e92d5"
+        },
+        {
+          "file": "audio/p13-a3.mp3",
+          "hash": "445355e89a0fd2dd"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p13-e.mp3",
+        "hash": "95375f4ce27f7818"
+      }
+    },
+    "p14": {
+      "chunks": [
+        {
+          "file": "audio/p14-c0.mp3",
+          "hash": "c886d7a3d5350bdb"
+        },
+        {
+          "file": "audio/p14-c1.mp3",
+          "hash": "8199bfeca63b9480"
+        },
+        {
+          "file": "audio/p14-c2.mp3",
+          "hash": "139dc1305742cd22"
+        }
+      ],
+      "question": {
+        "file": "audio/p14-c2.mp3",
+        "hash": "139dc1305742cd22"
+      },
+      "asked": [
+        {
+          "file": "audio/p14-a0.mp3",
+          "hash": "6a0cdf3b6a0e01ae"
+        },
+        {
+          "file": "audio/p14-a1.mp3",
+          "hash": "bb07522246b7d619"
+        },
+        {
+          "file": "audio/p14-a2.mp3",
+          "hash": "c0b3e2f94bf2c195"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p14-e.mp3",
+        "hash": "b8608b9d35bfc668"
+      }
+    },
+    "p15": {
+      "chunks": [
+        {
+          "file": "audio/p15-c0.mp3",
+          "hash": "dfffec603832def3"
+        },
+        {
+          "file": "audio/p15-c1.mp3",
+          "hash": "a082229bdf2eaa71"
+        },
+        {
+          "file": "audio/p15-c2.mp3",
+          "hash": "c259f2c823fb819a"
+        }
+      ],
+      "question": {
+        "file": "audio/p15-c2.mp3",
+        "hash": "c259f2c823fb819a"
+      },
+      "asked": [
+        {
+          "file": "audio/p15-a0.mp3",
+          "hash": "f887efd3cfda0da7"
+        },
+        {
+          "file": "audio/p15-a1.mp3",
+          "hash": "f45c3905be56b8e2"
+        },
+        {
+          "file": "audio/p15-a2.mp3",
+          "hash": "010967a37799e195"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p15-e.mp3",
+        "hash": "1992bb9bac4bd598"
+      }
+    },
+    "p16": {
+      "chunks": [
+        {
+          "file": "audio/p16-c0.mp3",
+          "hash": "4d98d83ad82d1c5c"
+        },
+        {
+          "file": "audio/p16-c1.mp3",
+          "hash": "7122d6621d60ddfe"
+        },
+        {
+          "file": "audio/p16-c2.mp3",
+          "hash": "bb7c88de643d6812"
+        },
+        {
+          "file": "audio/p16-c3.mp3",
+          "hash": "71788de39d5b0be9"
+        }
+      ],
+      "question": {
+        "file": "audio/p16-c3.mp3",
+        "hash": "71788de39d5b0be9"
+      },
+      "asked": [
+        {
+          "file": "audio/p16-a0.mp3",
+          "hash": "c4a613c4ec5f8587"
+        },
+        {
+          "file": "audio/p16-a1.mp3",
+          "hash": "2e1a776cf7bebceb"
+        },
+        {
+          "file": "audio/p16-a2.mp3",
+          "hash": "e6545eedb3c3e8e0"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p16-e.mp3",
+        "hash": "72eda5f8f83b3248"
+      }
+    },
+    "p17": {
+      "chunks": [
+        {
+          "file": "audio/p17-c0.mp3",
+          "hash": "811b927258b00d37"
+        },
+        {
+          "file": "audio/p17-c1.mp3",
+          "hash": "a5c644a768eb13f2"
+        },
+        {
+          "file": "audio/p17-c2.mp3",
+          "hash": "6e89fad5ef42efb6"
+        },
+        {
+          "file": "audio/p17-c3.mp3",
+          "hash": "760de2c1262763ca"
+        }
+      ],
+      "question": {
+        "file": "audio/p17-c3.mp3",
+        "hash": "760de2c1262763ca"
+      },
+      "asked": [
+        {
+          "file": "audio/p17-a0.mp3",
+          "hash": "40d2a901f3efa4c9"
+        },
+        {
+          "file": "audio/p17-a1.mp3",
+          "hash": "6f163e3f9ebf8be3"
+        },
+        {
+          "file": "audio/p17-a2.mp3",
+          "hash": "5f613be82958e1e1"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p17-e.mp3",
+        "hash": "207244d1570109c3"
+      }
+    },
+    "p18": {
+      "chunks": [
+        {
+          "file": "audio/p18-c0.mp3",
+          "hash": "d9bb3a8ef39b84bc"
+        },
+        {
+          "file": "audio/p18-c1.mp3",
+          "hash": "6fdcd278af3a1d1c"
+        },
+        {
+          "file": "audio/p18-c2.mp3",
+          "hash": "34799773df771162"
+        },
+        {
+          "file": "audio/p18-c3.mp3",
+          "hash": "c3303d326b2fc458"
+        },
+        {
+          "file": "audio/p18-c4.mp3",
+          "hash": "85ead4b93867a817"
+        }
+      ],
+      "question": {
+        "file": "audio/p18-c0.mp3",
+        "hash": "d9bb3a8ef39b84bc"
+      },
+      "asked": [
+        {
+          "file": "audio/p18-a0.mp3",
+          "hash": "4f7a062e41ec1080"
+        },
+        {
+          "file": "audio/p18-a1.mp3",
+          "hash": "dc4110749a18c1d8"
+        },
+        {
+          "file": "audio/p18-a2.mp3",
+          "hash": "6aed8cb2e9315f02"
+        },
+        {
+          "file": "audio/p18-a3.mp3",
+          "hash": "69aebd7ded268760"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p18-e.mp3",
+        "hash": "e461376905bfed78"
+      }
+    },
+    "p19": {
+      "chunks": [
+        {
+          "file": "audio/p19-c0.mp3",
+          "hash": "2176fe9f2b74d641"
+        },
+        {
+          "file": "audio/p19-c1.mp3",
+          "hash": "2c03817a9dd2ccf2"
+        },
+        {
+          "file": "audio/p19-c2.mp3",
+          "hash": "646732d8b8186e0c"
+        },
+        {
+          "file": "audio/p19-c3.mp3",
+          "hash": "1818467105fae378"
+        }
+      ],
+      "question": {
+        "file": "audio/p19-c3.mp3",
+        "hash": "1818467105fae378"
+      },
+      "asked": [
+        {
+          "file": "audio/p19-a0.mp3",
+          "hash": "ba65831a17e000c0"
+        },
+        {
+          "file": "audio/p19-a1.mp3",
+          "hash": "235b0d403664584a"
+        },
+        {
+          "file": "audio/p19-a2.mp3",
+          "hash": "850d13781bf1f200"
+        },
+        {
+          "file": "audio/p19-a3.mp3",
+          "hash": "e56e35043d561539"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p19-e.mp3",
+        "hash": "f120ded294b62b99"
+      }
+    },
+    "p20": {
+      "chunks": [
+        {
+          "file": "audio/p20-c0.mp3",
+          "hash": "3d138bd67640d3af"
+        },
+        {
+          "file": "audio/p20-c1.mp3",
+          "hash": "f71a482e4c64d77f"
+        },
+        {
+          "file": "audio/p20-c2.mp3",
+          "hash": "820e00cfad66b58f"
+        },
+        {
+          "file": "audio/p20-c3.mp3",
+          "hash": "b495cf18314e0012"
+        },
+        {
+          "file": "audio/p20-c4.mp3",
+          "hash": "f40fb44dd218a5d2"
+        }
+      ],
+      "question": {
+        "file": "audio/p20-c4.mp3",
+        "hash": "f40fb44dd218a5d2"
+      },
+      "asked": [
+        {
+          "file": "audio/p20-a0.mp3",
+          "hash": "0ef1d9fce1cbd013"
+        },
+        {
+          "file": "audio/p20-a1.mp3",
+          "hash": "820be70c645028d4"
+        },
+        {
+          "file": "audio/p20-a2.mp3",
+          "hash": "fa2dc7a3e1523088"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p20-e.mp3",
+        "hash": "263a5d7415cea1ee"
+      }
+    },
+    "p21": {
+      "chunks": [
+        {
+          "file": "audio/p21-c0.mp3",
+          "hash": "ef18fa687bede4bf"
+        },
+        {
+          "file": "audio/p21-c1.mp3",
+          "hash": "e06888e995592f49"
+        },
+        {
+          "file": "audio/p21-c2.mp3",
+          "hash": "292d4e574a48e811"
+        },
+        {
+          "file": "audio/p21-c3.mp3",
+          "hash": "052bfc7e1632097f"
+        }
+      ],
+      "question": {
+        "file": "audio/p21-c3.mp3",
+        "hash": "052bfc7e1632097f"
+      },
+      "asked": [
+        {
+          "file": "audio/p21-a0.mp3",
+          "hash": "26fa0d9a0e32c034"
+        },
+        {
+          "file": "audio/p21-a1.mp3",
+          "hash": "621fc21687bf3e6e"
+        },
+        {
+          "file": "audio/p21-a2.mp3",
+          "hash": "8c90f13a7b4f3c77"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p21-e.mp3",
+        "hash": "87452c0407d4e1e3"
+      }
+    },
+    "p22": {
+      "chunks": [
+        {
+          "file": "audio/p22-c0.mp3",
+          "hash": "d7e5812615b0c3cf"
+        },
+        {
+          "file": "audio/p22-c1.mp3",
+          "hash": "f9d8a05c221abc4b"
+        },
+        {
+          "file": "audio/p22-c2.mp3",
+          "hash": "ffb10c8f899bff64"
+        },
+        {
+          "file": "audio/p22-c3.mp3",
+          "hash": "0c2f2ec12f1109b1"
+        },
+        {
+          "file": "audio/p22-c4.mp3",
+          "hash": "635c5fed1ae8c634"
+        }
+      ],
+      "question": {
+        "file": "audio/p22-c4.mp3",
+        "hash": "635c5fed1ae8c634"
+      },
+      "asked": [
+        {
+          "file": "audio/p22-a0.mp3",
+          "hash": "2aa239a27152eb1c"
+        },
+        {
+          "file": "audio/p22-a1.mp3",
+          "hash": "a0d9e9cff18746c8"
+        },
+        {
+          "file": "audio/p22-a2.mp3",
+          "hash": "f752970ef27399d3"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p22-e.mp3",
+        "hash": "a4aa445e0e9cf72b"
+      }
+    },
+    "p23": {
+      "chunks": [
+        {
+          "file": "audio/p23-c0.mp3",
+          "hash": "338c07a99bb28d6c"
+        },
+        {
+          "file": "audio/p23-c1.mp3",
+          "hash": "937a0c277467dab6"
+        },
+        {
+          "file": "audio/p23-c2.mp3",
+          "hash": "da28214b9d97e74f"
+        },
+        {
+          "file": "audio/p23-c3.mp3",
+          "hash": "30b692095d34ffd3"
+        }
+      ],
+      "question": {
+        "file": "audio/p23-c3.mp3",
+        "hash": "30b692095d34ffd3"
+      },
+      "asked": [
+        {
+          "file": "audio/p23-a0.mp3",
+          "hash": "5503808bef312d2a"
+        },
+        {
+          "file": "audio/p23-a1.mp3",
+          "hash": "1f30fa77302cb146"
+        },
+        {
+          "file": "audio/p23-a2.mp3",
+          "hash": "bf1171eb6c3e296e"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p23-e.mp3",
+        "hash": "ce5487d033eb7490"
+      }
+    },
+    "p24": {
+      "chunks": [
+        {
+          "file": "audio/p24-c0.mp3",
+          "hash": "dffcd2022f9c11a4"
+        },
+        {
+          "file": "audio/p24-c1.mp3",
+          "hash": "7c20ca83a441ee6c"
+        },
+        {
+          "file": "audio/p24-c2.mp3",
+          "hash": "30b1534b78417c2e"
+        },
+        {
+          "file": "audio/p24-c3.mp3",
+          "hash": "fbcbda6d419808ec"
+        }
+      ],
+      "question": {
+        "file": "audio/p24-c0.mp3",
+        "hash": "dffcd2022f9c11a4"
+      },
+      "asked": [
+        {
+          "file": "audio/p24-a0.mp3",
+          "hash": "cc097ef8b210bf3f"
+        },
+        {
+          "file": "audio/p24-a1.mp3",
+          "hash": "d9cb6a8a80de7ee6"
+        },
+        {
+          "file": "audio/p24-a2.mp3",
+          "hash": "343921eda0314f04"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p24-e.mp3",
+        "hash": "d9dae6d78aa3d086"
+      }
+    },
+    "p25": {
+      "chunks": [
+        {
+          "file": "audio/p25-c0.mp3",
+          "hash": "ff79e2d199272e04"
+        },
+        {
+          "file": "audio/p25-c1.mp3",
+          "hash": "85d74cec6e1e1a22"
+        },
+        {
+          "file": "audio/p25-c2.mp3",
+          "hash": "81cd6ab6ee3e515e"
+        }
+      ],
+      "question": {
+        "file": "audio/p25-c2.mp3",
+        "hash": "81cd6ab6ee3e515e"
+      },
+      "asked": [
+        {
+          "file": "audio/p25-a0.mp3",
+          "hash": "da48846a39969fdb"
+        },
+        {
+          "file": "audio/p25-a1.mp3",
+          "hash": "c21acd50639fb13e"
+        },
+        {
+          "file": "audio/p25-a2.mp3",
+          "hash": "0df92d53f89c93ce"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p25-e.mp3",
+        "hash": "756b1290d8213320"
+      }
+    },
+    "p26": {
+      "chunks": [
+        {
+          "file": "audio/p26-c0.mp3",
+          "hash": "773d4d0e3ee1a683"
+        },
+        {
+          "file": "audio/p26-c1.mp3",
+          "hash": "ce7f8093d93fb83c"
+        },
+        {
+          "file": "audio/p26-c2.mp3",
+          "hash": "2c7314e6dbcbdbab"
+        },
+        {
+          "file": "audio/p26-c3.mp3",
+          "hash": "1cc2d4943ca3d963"
+        }
+      ],
+      "question": {
+        "file": "audio/p26-c3.mp3",
+        "hash": "1cc2d4943ca3d963"
+      },
+      "asked": [
+        {
+          "file": "audio/p26-a0.mp3",
+          "hash": "a13058392ba80864"
+        },
+        {
+          "file": "audio/p26-a1.mp3",
+          "hash": "866ff138265c2a1d"
+        },
+        {
+          "file": "audio/p26-a2.mp3",
+          "hash": "c21acd50639fb13e"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p26-e.mp3",
+        "hash": "387f6ff3c3f77816"
+      }
+    },
+    "p27": {
+      "chunks": [
+        {
+          "file": "audio/p27-c0.mp3",
+          "hash": "88b29ef9c03013ba"
+        },
+        {
+          "file": "audio/p27-c1.mp3",
+          "hash": "bca01e168ca43d93"
+        },
+        {
+          "file": "audio/p27-c2.mp3",
+          "hash": "737c26fd13b17626"
+        },
+        {
+          "file": "audio/p27-c3.mp3",
+          "hash": "1818467105fae378"
+        }
+      ],
+      "question": {
+        "file": "audio/p27-c3.mp3",
+        "hash": "1818467105fae378"
+      },
+      "asked": [
+        {
+          "file": "audio/p27-a0.mp3",
+          "hash": "838fa04b72925177"
+        },
+        {
+          "file": "audio/p27-a1.mp3",
+          "hash": "872f9cb840f7dc63"
+        },
+        {
+          "file": "audio/p27-a2.mp3",
+          "hash": "4e93d7024258d58c"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p27-e.mp3",
+        "hash": "fe89cc50f1f29b4f"
+      }
+    },
+    "p28": {
+      "chunks": [
+        {
+          "file": "audio/p28-c0.mp3",
+          "hash": "9d505640d65d4976"
+        },
+        {
+          "file": "audio/p28-c1.mp3",
+          "hash": "466f8225290f6e4a"
+        },
+        {
+          "file": "audio/p28-c2.mp3",
+          "hash": "02821394112b52c4"
+        },
+        {
+          "file": "audio/p28-c3.mp3",
+          "hash": "f1b1ef2cf8a6be5a"
+        }
+      ],
+      "question": {
+        "file": "audio/p28-c0.mp3",
+        "hash": "9d505640d65d4976"
+      },
+      "asked": [
+        {
+          "file": "audio/p28-a0.mp3",
+          "hash": "2c68f849ee1920e1"
+        },
+        {
+          "file": "audio/p28-a1.mp3",
+          "hash": "734fdd18c231d6dd"
+        },
+        {
+          "file": "audio/p28-a2.mp3",
+          "hash": "57394e4ba085a673"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p28-e.mp3",
+        "hash": "95a6c84abd8390a1"
+      }
+    },
+    "p29": {
+      "chunks": [
+        {
+          "file": "audio/p29-c0.mp3",
+          "hash": "b5620fd4f18a0161"
+        },
+        {
+          "file": "audio/p29-c1.mp3",
+          "hash": "21a89025bda75a19"
+        },
+        {
+          "file": "audio/p29-c2.mp3",
+          "hash": "2b3e7c3a29aea0f7"
+        },
+        {
+          "file": "audio/p29-c3.mp3",
+          "hash": "d4b5b940c66dbe82"
+        },
+        {
+          "file": "audio/p29-c4.mp3",
+          "hash": "885193e4b8a5cc92"
+        }
+      ],
+      "question": {
+        "file": "audio/p29-c4.mp3",
+        "hash": "885193e4b8a5cc92"
+      },
+      "asked": [
+        {
+          "file": "audio/p29-a0.mp3",
+          "hash": "f0f8015bfac237fd"
+        },
+        {
+          "file": "audio/p29-a1.mp3",
+          "hash": "e890e2a6ae31b779"
+        },
+        {
+          "file": "audio/p29-a2.mp3",
+          "hash": "e4aa0c6d06b3c0b9"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p29-e.mp3",
+        "hash": "27be33c87ee8e629"
+      }
+    },
+    "p30": {
+      "chunks": [
+        {
+          "file": "audio/p30-c0.mp3",
+          "hash": "5e25941e9ab4387d"
+        },
+        {
+          "file": "audio/p30-c1.mp3",
+          "hash": "8a1c296b120a31a1"
+        },
+        {
+          "file": "audio/p30-c2.mp3",
+          "hash": "fc71ef1e51d725f1"
+        },
+        {
+          "file": "audio/p30-c3.mp3",
+          "hash": "1c9ebf3832cccc48"
+        },
+        {
+          "file": "audio/p30-c4.mp3",
+          "hash": "62882b21caca4acf"
+        }
+      ],
+      "question": {
+        "file": "audio/p30-c4.mp3",
+        "hash": "62882b21caca4acf"
+      },
+      "asked": [
+        {
+          "file": "audio/p30-a0.mp3",
+          "hash": "fe162229adf0c2ca"
+        },
+        {
+          "file": "audio/p30-a1.mp3",
+          "hash": "f432ed3be15e0407"
+        },
+        {
+          "file": "audio/p30-a2.mp3",
+          "hash": "313f78272b34abbd"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p30-e.mp3",
+        "hash": "797ae63fea9ac78c"
+      }
+    },
+    "p31": {
+      "chunks": [
+        {
+          "file": "audio/p31-c0.mp3",
+          "hash": "0fbda57ea24a89b1"
+        },
+        {
+          "file": "audio/p31-c1.mp3",
+          "hash": "86b76a3c85e8f3bd"
+        },
+        {
+          "file": "audio/p31-c2.mp3",
+          "hash": "a135430c98a7a2cf"
+        },
+        {
+          "file": "audio/p31-c3.mp3",
+          "hash": "93ca3dfa3015c936"
+        }
+      ],
+      "question": {
+        "file": "audio/p31-c3.mp3",
+        "hash": "93ca3dfa3015c936"
+      },
+      "asked": [
+        {
+          "file": "audio/p31-a0.mp3",
+          "hash": "cd85f5a9ebc1ff23"
+        },
+        {
+          "file": "audio/p31-a1.mp3",
+          "hash": "ec698a8684f32060"
+        },
+        {
+          "file": "audio/p31-a2.mp3",
+          "hash": "c9bbb49619fc08c6"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p31-e.mp3",
+        "hash": "bad9451639f0f9b2"
+      }
+    },
+    "p32": {
+      "chunks": [
+        {
+          "file": "audio/p32-c0.mp3",
+          "hash": "1835f4db41e08ff2"
+        },
+        {
+          "file": "audio/p32-c1.mp3",
+          "hash": "c0d562f8f85239dd"
+        },
+        {
+          "file": "audio/p32-c2.mp3",
+          "hash": "484f5221e8680309"
+        },
+        {
+          "file": "audio/p32-c3.mp3",
+          "hash": "7d56907d576cce21"
+        }
+      ],
+      "question": {
+        "file": "audio/p32-c3.mp3",
+        "hash": "7d56907d576cce21"
+      },
+      "asked": [
+        {
+          "file": "audio/p32-a0.mp3",
+          "hash": "17efed2c4039228e"
+        },
+        {
+          "file": "audio/p32-a1.mp3",
+          "hash": "dff2f5679d08d7e6"
+        },
+        {
+          "file": "audio/p32-a2.mp3",
+          "hash": "811d6dfba988606a"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p32-e.mp3",
+        "hash": "06469fdfcf35bd09"
+      }
+    },
+    "p33": {
+      "chunks": [
+        {
+          "file": "audio/p33-c0.mp3",
+          "hash": "f9182ab3ea84f666"
+        },
+        {
+          "file": "audio/p33-c1.mp3",
+          "hash": "f18b6b77f754b8ff"
+        },
+        {
+          "file": "audio/p33-c2.mp3",
+          "hash": "136923a8464c61a1"
+        }
+      ],
+      "question": {
+        "file": "audio/p33-c2.mp3",
+        "hash": "136923a8464c61a1"
+      },
+      "asked": [
+        {
+          "file": "audio/p33-a0.mp3",
+          "hash": "438f41f2530d8056"
+        },
+        {
+          "file": "audio/p33-a1.mp3",
+          "hash": "74d53d161c576796"
+        },
+        {
+          "file": "audio/p33-a2.mp3",
+          "hash": "411789591e1c560b"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p33-e.mp3",
+        "hash": "f2d2b790c2780fbd"
+      }
+    },
+    "p34": {
+      "chunks": [
+        {
+          "file": "audio/p34-c0.mp3",
+          "hash": "a0110d4483243452"
+        },
+        {
+          "file": "audio/p34-c1.mp3",
+          "hash": "da0c7f3f0947aca4"
+        },
+        {
+          "file": "audio/p34-c2.mp3",
+          "hash": "1035c357f7d413b0"
+        },
+        {
+          "file": "audio/p34-c3.mp3",
+          "hash": "e36233282e2dd8b1"
+        },
+        {
+          "file": "audio/p34-c4.mp3",
+          "hash": "29ca7a8b477ffded"
+        }
+      ],
+      "question": {
+        "file": "audio/p34-c4.mp3",
+        "hash": "29ca7a8b477ffded"
+      },
+      "asked": [
+        {
+          "file": "audio/p34-a0.mp3",
+          "hash": "1b1d85a81c1e1543"
+        },
+        {
+          "file": "audio/p34-a1.mp3",
+          "hash": "b28850bac5b3df41"
+        },
+        {
+          "file": "audio/p34-a2.mp3",
+          "hash": "b19f9a52f74e5f77"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p34-e.mp3",
+        "hash": "cc69fb24c992ca10"
+      }
+    },
+    "p35": {
+      "chunks": [
+        {
+          "file": "audio/p35-c0.mp3",
+          "hash": "c92a24a57e08539b"
+        },
+        {
+          "file": "audio/p35-c1.mp3",
+          "hash": "616cdb597b0f03b2"
+        },
+        {
+          "file": "audio/p35-c2.mp3",
+          "hash": "62d9fa4391039620"
+        }
+      ],
+      "question": {
+        "file": "audio/p35-c2.mp3",
+        "hash": "62d9fa4391039620"
+      },
+      "asked": [
+        {
+          "file": "audio/p35-a0.mp3",
+          "hash": "0ef4a358fefdf60d"
+        },
+        {
+          "file": "audio/p35-a1.mp3",
+          "hash": "3d00dfc642af1527"
+        },
+        {
+          "file": "audio/p35-a2.mp3",
+          "hash": "bb07522246b7d619"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p35-e.mp3",
+        "hash": "62907cd62cdcf12e"
+      }
+    },
+    "p36": {
+      "chunks": [
+        {
+          "file": "audio/p36-c0.mp3",
+          "hash": "335d6511a466e90e"
+        },
+        {
+          "file": "audio/p36-c1.mp3",
+          "hash": "62336e0864e95937"
+        },
+        {
+          "file": "audio/p36-c2.mp3",
+          "hash": "d25ea11be5c93502"
+        },
+        {
+          "file": "audio/p36-c3.mp3",
+          "hash": "8c1bd2ebb8fbbbd9"
+        },
+        {
+          "file": "audio/p36-c4.mp3",
+          "hash": "419c3ba08c24948e"
+        }
+      ],
+      "question": {
+        "file": "audio/p36-c4.mp3",
+        "hash": "419c3ba08c24948e"
+      },
+      "asked": [
+        {
+          "file": "audio/p36-a0.mp3",
+          "hash": "f7238fef2829d316"
+        },
+        {
+          "file": "audio/p36-a1.mp3",
+          "hash": "3095259c6a2541ed"
+        },
+        {
+          "file": "audio/p36-a2.mp3",
+          "hash": "887899917306c9bb"
+        }
+      ],
+      "explanation": {
+        "file": "audio/p36-e.mp3",
+        "hash": "cabb1a9528b644f2"
+      }
+    }
+  }
+}

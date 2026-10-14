@@ -5,6 +5,7 @@ const SETTINGS_KEY = 'pas-a-pas.settings';
 
 export const DEFAULT_SETTINGS = {
   voiceOn: true,
+  recordedVoice: true,
   rate: 0.9,
   fontSize: 20,
   letterSpacing: 0,

@@ -1,5 +1,5 @@
 // Bump CACHE when any cached file changes, otherwise clients keep the old copy.
-const CACHE = 'pas-a-pas-v7';
+const CACHE = 'pas-a-pas-v8';
 const SHELL = [
   './',
   'index.html',
@@ -13,10 +13,23 @@ const SHELL = [
   'js/storage.js',
   'js/ui.js',
   'data/problems.fr.json',
+  'data/audio-manifest.json',
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+  event.waitUntil(
+    caches
+      .open(CACHE)
+      .then(async (cache) => {
+        await cache.addAll(SHELL);
+        // The recordings are listed in the manifest. A file that fails to download must not block the install:
+        // the app falls back to the system voice for it.
+        const manifest = await (await cache.match('data/audio-manifest.json')).json();
+        const files = Object.values(manifest.problems).flatMap((e) => [...e.chunks, e.question, ...e.asked, e.explanation].map((r) => r.file));
+        await Promise.allSettled([...new Set(files)].map((f) => cache.add(f)));
+      })
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', (event) => {

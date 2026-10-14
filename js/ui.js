@@ -319,6 +319,7 @@ export function renderSettings(settings, { onChange, onHome }) {
     h('div', { class: 'topbar' }, btn('‹ Accueil', onHome, { cls: 'link', key: 'home-top' })),
     title('Réglages'),
     choices('Lecture à voix haute', [[true, 'Activée'], [false, 'Désactivée']], settings.voiceOn, (v) => onChange({ voiceOn: v })),
+    choices('Voix enregistrée', [[true, 'Activée'], [false, 'Désactivée']], settings.recordedVoice, (v) => onChange({ recordedVoice: v })),
     voicePicker(settings),
     h('fieldset', {}, h('legend', {}, `Vitesse de la voix : ${fmt(rate)}`),
       h('div', { class: 'row' },
@@ -359,5 +360,6 @@ export function renderParents(stats, { level, onLevel, onExport, onHome }) {
       h('caption', {}, 'Temps moyen par étape (secondes)'),
       h('tbody', {}, PHASES.map((ph) => row(`${ph.n}. ${ph.label}`,
         stats.avgMs[ph.n] === null ? '—' : fmt(Math.round(stats.avgMs[ph.n] / 100) / 10)))))),
-    h('div', { class: 'row' }, btn('Exporter JSON', onExport, { cls: 'primary', key: 'export' })));
+    h('div', { class: 'row' }, btn('Exporter JSON', onExport, { cls: 'primary', key: 'export' })),
+    h('p', { class: 'hint' }, 'Voix : Kokoro (ff_siwis), jeu de données SIWIS, licence CC BY 4.0'));
 }

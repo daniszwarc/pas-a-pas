@@ -53,8 +53,34 @@ function applySettings() {
   document.documentElement.dataset.bg = settings.bg;
 }
 
-const voiceActive = () => settings.voiceOn && voice.status() === 'ok';
-const speak = (text) => { if (settings.voiceOn) voice.speak(text, settings.rate); };
+// displayed text -> recorded mp3 path, built from data/audio-manifest.json (empty when there is no manifest)
+let recordedFiles = new Map();
+const recordedOn = () => settings.recordedVoice && recordedFiles.size > 0;
+const voiceSource = () => (recordedOn() ? 'recorded' : 'system');
+
+const voiceActive = () => settings.voiceOn && (recordedOn() || voice.status() === 'ok');
+
+// Statement chunks, questions, "asked" options and explanations play the recording; anything else (single words)
+// uses the system voice, and so does a recording that is missing or fails to load.
+function speak(text) {
+  if (!settings.voiceOn) return;
+  const file = recordedOn() ? recordedFiles.get(text) : null;
+  if (file) voice.play(file, settings.rate).then((ok) => { if (!ok) voice.speak(text, settings.rate); });
+  else voice.speak(text, settings.rate);
+}
+
+function indexRecordings(manifest) {
+  const files = new Map();
+  for (const p of problems) {
+    const e = manifest.problems?.[p.id];
+    if (!e) continue;
+    p.chunks.forEach((t, i) => e.chunks[i] && files.set(t, e.chunks[i].file));
+    files.set(p.question, e.question.file);
+    p.asked.options.forEach((t, i) => e.asked[i] && files.set(t, e.asked[i].file));
+    files.set(p.explanation, e.explanation.file);
+  }
+  return files;
+}
 
 function updateNotice() {
   const status = voice.status();
@@ -62,7 +88,7 @@ function updateNotice() {
     'no-french': 'Aucune voix française n’a été trouvée sur cet appareil. L’application fonctionne sans le son.',
     unsupported: 'La lecture à voix haute n’est pas disponible sur cet appareil. L’application fonctionne sans le son.',
   }[status];
-  noticeEl.textContent = settings.voiceOn && msg ? msg : '';
+  noticeEl.textContent = settings.voiceOn && !recordedOn() && msg ? msg : '';
   noticeEl.hidden = !noticeEl.textContent;
 }
 
@@ -154,7 +180,7 @@ function dispatch(action) {
 function finishAttempt() {
   const now = Date.now();
   const attempt = toAttempt(state, {
-    now, settings: { ...settings, voiceName: voice.activeName() },
+    now, settings: { ...settings, voiceName: voice.activeName(), voiceSource: voiceSource() },
     sessionElapsedMs: now - session.start,
     pauseShown: session.pauseShown,
     attemptNumber: priorAttempts + 1,
@@ -253,6 +279,10 @@ async function boot() {
     root.textContent = 'Impossible de charger les problèmes.';
     return;
   }
+  try {
+    const res = await fetch('data/audio-manifest.json');
+    if (res.ok) recordedFiles = indexRecordings(await res.json());
+  } catch { /* no recordings: the system voice is used */ }
   render();
 }
 

@@ -4,3 +4,6 @@ test.js
 README.md
 Dockerfile
 .dockerignore
+.env
+scripts/
+audio-sample/
