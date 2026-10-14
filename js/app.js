@@ -12,9 +12,10 @@ let settings = loadSettings();
 const LEVEL_KEY = 'pas-a-pas.level';
 let level = loadLevel();
 let problems = [];
-let view = 'home'; // home | settings | parents | problem | pause
+let view = 'home'; // home | settings | parents | problem | pause | endpass
 let state = null;
 let saveFailed = false;
+let priorAttempts = 0; // earlier attempts of the problem on screen
 let session = newSession();
 
 function newSession() {
@@ -83,7 +84,7 @@ function render() {
   const key = view === 'problem' ? `problem-${state.step}` : view;
   const animate = key !== lastKey;
   lastKey = key;
-  if (view === 'home') show(ui.renderHome({ onStart: startNext, onSettings: () => go('settings'), onParents: () => go('parents') }), animate);
+  if (view === 'home') show(ui.renderHome({ onStart: () => startNext(), onSettings: () => go('settings'), onParents: () => go('parents') }), animate);
   else if (view === 'settings') {
     show(ui.renderSettings(settings, {
       onChange: (patch) => { settings = { ...settings, ...patch }; saveSettings(settings); applySettings(); updateNotice(); render(); },
@@ -94,6 +95,8 @@ function render() {
     getAttempts().then(
       (attempts) => show(ui.renderParents(computeStats(attempts), { level, onLevel: setLevel, onExport: () => exportAttempts(attempts), onHome: () => go('home') }), animate),
       () => show(ui.renderParents(computeStats([]), { level, onLevel: setLevel, onExport: () => {}, onHome: () => go('home') }), animate));
+  } else if (view === 'endpass') {
+    show(ui.renderEndOfPass({ onRestart: () => startNext(true), onStop: () => { session = newSession(); go('home'); } }), animate);
   } else if (view === 'pause') {
     show(ui.renderPause({ onContinue: continueAfterPause, onStop: () => { session = newSession(); go('home'); } }), animate);
   } else {
@@ -108,12 +111,15 @@ function go(next) {
 }
 
 function computeStats(attempts) {
+  // errors[type] and correct are [first-time, repeat]. Old records lack attemptNumber: derive it from their order.
   const errors = {};
-  let correct = 0;
-  const sums = {}, counts = {};
+  const correct = [0, 0];
+  const sums = {}, counts = {}, seen = {};
   for (const a of attempts) {
-    if (a.correct) correct += 1;
-    else errors[a.errorType] = (errors[a.errorType] || 0) + 1;
+    seen[a.problemId] = (seen[a.problemId] || 0) + 1;
+    const col = (a.attemptNumber ?? seen[a.problemId]) > 1 ? 1 : 0;
+    if (a.correct) correct[col] += 1;
+    else (errors[a.errorType] ||= [0, 0])[col] += 1;
     for (const [n, ms] of Object.entries(a.msPerPhase)) { sums[n] = (sums[n] || 0) + ms; counts[n] = (counts[n] || 0) + 1; }
   }
   const avgMs = {};
@@ -151,6 +157,7 @@ function finishAttempt() {
     now, settings: { ...settings, voiceName: voice.activeName() },
     sessionElapsedMs: now - session.start,
     pauseShown: session.pauseShown,
+    attemptNumber: priorAttempts + 1,
   });
   saveFailed = false;
   addAttempt(attempt).catch(() => { saveFailed = true; if (view === 'problem') render(); });
@@ -164,19 +171,48 @@ function finishAttempt() {
   }
 }
 
-async function pickProblem() {
-  let counts = {};
-  try { for (const a of await getAttempts()) counts[a.problemId] = (counts[a.problemId] || 0) + 1; } catch { counts = {}; }
-  const last = state?.problem.id;
-  const atLevel = problems.filter((p) => p.level === level);
-  const all = atLevel.length ? atLevel : problems; // a level with no problems falls back to everything
-  const pool = all.filter((p) => p.id !== last);
-  return (pool.length ? pool : all).reduce((best, p) => ((counts[p.id] || 0) < (counts[best.id] || 0) ? p : best));
+// Deterministic shuffle so a pass keeps the same order across reloads (seeded by level and pass number).
+function seededOrder(list, seed) {
+  let h = 2166136261;
+  for (const c of seed) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
+  const rnd = () => {
+    h = (h + 0x6d2b79f5) | 0;
+    let t = Math.imul(h ^ (h >>> 15), h | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
 }
 
-async function startNext() {
+// A "pass" is one attempt of every problem of the level. Pass 1 follows file order, later passes a seeded shuffle.
+// The pass in progress is the lowest attempt count; when all counts are equal and >= 1, a pass has just ended.
+async function pickProblem(skipEndCard) {
+  const counts = {};
+  let lastId = null;
+  try {
+    const attempts = await getAttempts();
+    for (const a of attempts) counts[a.problemId] = (counts[a.problemId] || 0) + 1;
+    lastId = attempts.at(-1)?.problemId ?? null;
+  } catch { /* no history: behave like a first pass */ }
+  const atLevel = problems.filter((p) => p.level === level);
+  const all = atLevel.length ? atLevel : problems; // a level with no problems falls back to everything
+  const n = (p) => counts[p.id] || 0;
+  const pass = Math.min(...all.map(n));
+  if (pass >= 1 && !skipEndCard && all.every((p) => n(p) === pass)) return { endOfPass: true };
+  const order = pass >= 1 ? seededOrder(all, `${level}:${pass}`) : all;
+  const open = order.filter((p) => n(p) === pass);
+  const skip = new Set([lastId, state?.problem.id]); // no immediate repeat, also right after a reload
+  return { problem: open.find((p) => !skip.has(p.id)) ?? open[0], prior: pass };
+}
+
+async function startNext(skipEndCard = false) {
   if (!problems.length) return;
-  const problem = await pickProblem();
+  const pick = await pickProblem(skipEndCard);
+  if (pick.endOfPass) return go('endpass');
+  const problem = pick.problem;
+  priorAttempts = pick.prior;
   const now = Date.now();
   session.start ??= now;
   session.anchor ??= now;

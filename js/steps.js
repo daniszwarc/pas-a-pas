@@ -121,13 +121,15 @@ export function evaluate(s) {
   return { correct, errorType, value };
 }
 
-export function toAttempt(s, { now, settings, sessionElapsedMs, pauseShown }) {
+export function toAttempt(s, { now, settings, sessionElapsedMs, pauseShown, attemptNumber }) {
   const p = s.problem;
   const { correct, errorType, value } = evaluate(s);
   return {
     timestamp: new Date(now).toISOString(),
     problemId: p.id,
     level: p.level,
+    attemptNumber,
+    isRepeat: attemptNumber > 1,
     schema: p.schema,
     keywordConsistency: p.keywordConsistency,
     steps: p.steps,

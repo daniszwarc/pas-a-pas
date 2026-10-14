@@ -263,6 +263,14 @@ export function renderPause({ onContinue, onStop }) {
       btn('Terminer', onStop, { cls: 'big', key: 'stop' }))));
 }
 
+export function renderEndOfPass({ onRestart, onStop }) {
+  return h('section', { class: 'screen pause' }, h('div', { class: 'card' },
+    title('Tu as fait tous les problèmes de ce niveau.'),
+    h('div', { class: 'row' },
+      btn('Recommencer', onRestart, { cls: 'primary big', key: 'restart' }),
+      btn('Terminer', onStop, { cls: 'big', key: 'stop' }))));
+}
+
 const BG_LABELS = { blanc: 'Blanc cassé', creme: 'Crème', gris: 'Gris pâle', bleu: 'Bleu pâle' };
 
 function choices(legend, options, current, onPick) {
@@ -335,6 +343,7 @@ const ERROR_LABELS = {
 
 export function renderParents(stats, { level, onLevel, onExport, onHome }) {
   const row = (a, b) => h('tr', {}, h('th', { scope: 'row' }, a), h('td', {}, String(b)));
+  const row2 = (a, [first, repeat]) => h('tr', {}, h('th', { scope: 'row' }, a), h('td', {}, String(first)), h('td', {}, String(repeat)));
   return h('section', { class: 'screen' },
     h('div', { class: 'topbar' }, btn('‹ Accueil', onHome, { cls: 'link', key: 'home-top' })),
     title('Espace parents'),
@@ -343,8 +352,9 @@ export function renderParents(stats, { level, onLevel, onExport, onHome }) {
     h('p', { class: 'stat' }, `Nombre d’essais : ${stats.count}`),
     h('div', { class: 'table-wrap' }, h('table', {},
       h('caption', {}, 'Essais selon le résultat'),
-      h('tbody', {}, row('Réponses correctes', stats.correct),
-        Object.entries(ERROR_LABELS).map(([k, label]) => row(label, stats.errors[k] || 0))))),
+      h('thead', {}, h('tr', {}, h('td', {}), h('th', { scope: 'col' }, 'Première fois'), h('th', { scope: 'col' }, 'Reprises'))),
+      h('tbody', {}, row2('Réponses correctes', stats.correct),
+        Object.entries(ERROR_LABELS).map(([k, label]) => row2(label, stats.errors[k] || [0, 0]))))),
     h('div', { class: 'table-wrap' }, h('table', {},
       h('caption', {}, 'Temps moyen par étape (secondes)'),
       h('tbody', {}, PHASES.map((ph) => row(`${ph.n}. ${ph.label}`,

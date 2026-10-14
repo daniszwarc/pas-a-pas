@@ -227,6 +227,7 @@ table { border-collapse: collapse; width: 100%; }
 caption { text-align: left; font-weight: 700; padding: 0.75rem 0 0.25rem; }
 th, td { padding: 0.45rem 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
 th { font-weight: 500; padding-right: 1rem; }
+thead th { text-align: right; font-weight: 700; padding-right: 0; padding-left: 0.75rem; white-space: nowrap; }
 td { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 tr:last-child th, tr:last-child td { border-bottom: none; }
 
